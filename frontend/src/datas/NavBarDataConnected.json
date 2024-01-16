@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "linkname": "Home",
+    "linkurl": "/"
+  },
+
+  {
+    "id": 2,
+    "linkname": "Logout",
+    "linkurl": "/",
+    "action": "logout"
+  },
+  {
+    "id": 3,
+    "linkname": "Settings",
+    "linkurl": "/settings"
+  }
+]

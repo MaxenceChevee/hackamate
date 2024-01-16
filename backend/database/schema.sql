@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+id INT NOT NULL AUTO_INCREMENT,
+firstname VARCHAR(30) DEFAULT NULL,
+lastname VARCHAR(30) DEFAULT NULL,
+pseudoname VARCHAR(30)  NOT NULL,
+mail VARCHAR(90),
+birthdate DATE NOT NULL,
+logdate DATE NOT NULL,
+password VARCHAR(200),
+PRIMARY KEY (`id`)
+);
