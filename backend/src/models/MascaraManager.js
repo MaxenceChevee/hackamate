@@ -9,7 +9,7 @@ class MascaraManager extends AbstractManager {
     const { name, codeColor, nameColor, quantity, effect, price } = mascara;
 
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, code_color, name_color, quantity, effect, price) VALUES (?, ?, ?, ?, ?)`,
+      `INSERT INTO ${this.table} (name, code_color, name_color, quantity, effect, price) VALUES (?, ?, ?, ?, ?, ?)`,
       [name, codeColor, nameColor, quantity, effect, price]
     );
 

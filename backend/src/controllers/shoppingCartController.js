@@ -9,23 +9,31 @@ function getRandomElement(array) {
 }
 
 async function getRandomSuggestions() {
-  const mascaraManager = new MascaraManager();
-  const foundationManager = new FoundationManager();
-  const lipstickManager = new LipstickManager();
+  try {
+    const mascaraManager = new MascaraManager();
+    const foundationManager = new FoundationManager();
+    const lipstickManager = new LipstickManager();
 
-  const mascaras = await mascaraManager.find();
-  const foundations = await foundationManager.find();
-  const lipsticks = await lipstickManager.find();
+    const [mascaras, foundations, lipsticks] = await Promise.all([
+      mascaraManager.find(),
+      foundationManager.find(),
+      lipstickManager.find(),
+    ]);
 
-  const randomMascara = getRandomElement(mascaras);
-  const randomFoundation = getRandomElement(foundations);
-  const randomLipstick = getRandomElement(lipsticks);
-
-  return {
-    mascara: randomMascara,
-    foundation: randomFoundation,
-    lipstick: randomLipstick,
-  };
+    return {
+      mascara1: getRandomElement(mascaras),
+      mascara2: getRandomElement(mascaras),
+      mascara3: getRandomElement(mascaras),
+      foundation1: getRandomElement(foundations),
+      foundation2: getRandomElement(foundations),
+      foundation3: getRandomElement(foundations),
+      lipstick1: getRandomElement(lipsticks),
+      lipstick2: getRandomElement(lipsticks),
+      lipstick3: getRandomElement(lipsticks),
+    };
+  } catch (error) {
+    throw new Error(`Error generating random suggestions: ${error.message}`);
+  }
 }
 
 const suggestRandomItems = async (req, res) => {
