@@ -31,7 +31,12 @@ const seed = async () => {
       ('Age perfect mascara densifiant', '#391E17', 'Marron', 9, 'Densifieur', 12.90, 'https://postimg.cc/2VfJJVyV'),
       ('Telescopic', '#231F20', 'Noir', 12, 'Allongement', 14.50, 'https://postimg.cc/6Td2wmWY'),
       ('Mascara panorama volume millions de cils', '#53352D', 'Marron', 10, 'Volumateur', 12.90, 'https://postimg.cc/zLxB3sb1'),
-      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://postimg.cc/XZvbpp6s')`
+      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://postimg.cc/XZvbpp6s'),
+      ('Mascara bambi eye faux cils noir intense', '#000000', 'Noir', 10, 'Allongement', 14.50, 'https://postimg.cc/zHKyCTqw'),
+      ('Mascara Lash Paradise Waterproof', '#000000', 'Noir', 15, 'Volumateur', 11.50, 'https://postimg.cc/LYT1wzcH'),
+      ('Mascara Lash Paradise Noir Intense', '#000000', 'Noir', 13, 'Densifieur', 14, 'https://postimg.cc/zbjx7Hph'),
+      ('Mascara Bambi Eye Faux Cils Waterproof', '#000000', 'Noir', 15, 'Bouclage', 17, 'https://postimg.cc/YGmvw0ds'),
+      ('Volume Millions de Cils Mascara volume intense et soin', ''#000000', 'Noir', 10, 'Allongemnt', 15, 'https://postimg.cc/BjvgWWK1')`
       )
     );
 
@@ -42,7 +47,7 @@ const seed = async () => {
       ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://postimg.cc/FYzd3bcS'),
       ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://postimg.cc/jW7zHP9M'),
       ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://postimg.cc/Fd08BffZ'),
-      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 'https://postimg.cc/s1MxLsKh')`
+      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 13, 'https://postimg.cc/s1MxLsKh')`
       )
     );
 
@@ -53,7 +58,12 @@ const seed = async () => {
       ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://postimg.cc/MXQbndGM'),
       ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://postimg.cc/8sP401KD'),
       ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://postimg.cc/3ynxwCgk'),
-      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://postimg.cc/LJdFLHLk')`
+      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://postimg.cc/LJdFLHLk'),
+      ('L'Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://postimg.cc/BjvgWWK1'),
+      ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://postimg.cc/xcWbjWkZ'),
+      ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://postimg.cc/xcWbjWkZ'),
+      ('Color riche rouge à lèvres mat', '#C74D5C, 'Frappez une rose', 25, 'Mate', 16.99, 'https://postimg.cc/7fzT2yWS'),
+      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L'autonomie', 20, 'Brillant', 17, 'https://postimg.cc/4m3wpnTj')`
       )
     );
 
