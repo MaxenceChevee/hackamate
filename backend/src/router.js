@@ -14,6 +14,7 @@ router.get("/users/:id", userControllers.read);
 router.get("/users/:id/field", userControllers.read);
 router.put("/users/:id", userControllers.edit);
 router.post("/users", userControllers.add);
+router.post("/login", userControllers.login);
 router.delete("/users/:id", userControllers.destroy);
 
 router.post("/cart/add", shoppingCartController.addToCart);
