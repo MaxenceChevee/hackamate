@@ -21,8 +21,8 @@ import Settings from "./pages/Settings";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Popup from "./components/Popup";
-import Analyzer from "./pages/Analyzer";
 import ShoppingCart from "./pages/ShoppingCart";
+import Uploads from "./pages/Uploads";
 import Home from "./pages/Home";
 
 function PrivateRoute({ element, requiresAuth, ...props }) {
@@ -82,7 +82,7 @@ function Main() {
         /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
-        <Route path="/analyzer/:type" element={<Analyzer />} />
+        <Route path="/analyzer/uploads" element={<Uploads />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
         <Route
           path="/register"
