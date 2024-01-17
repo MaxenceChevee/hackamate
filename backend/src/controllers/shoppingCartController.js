@@ -1,4 +1,46 @@
 const ShoppingCartManager = require("../models/ShoppingCartManager");
+const MascaraManager = require("../models/MascaraManager");
+const FoundationManager = require("../models/FoundationManager");
+const LipstickManager = require("../models/LipstickManager");
+
+function getRandomElement(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+async function getRandomSuggestions() {
+  const mascaraManager = new MascaraManager();
+  const foundationManager = new FoundationManager();
+  const lipstickManager = new LipstickManager();
+
+  const mascaras = await mascaraManager.find();
+  const foundations = await foundationManager.find();
+  const lipsticks = await lipstickManager.find();
+
+  const randomMascara = getRandomElement(mascaras);
+  const randomFoundation = getRandomElement(foundations);
+  const randomLipstick = getRandomElement(lipsticks);
+
+  return {
+    mascara: randomMascara,
+    foundation: randomFoundation,
+    lipstick: randomLipstick,
+  };
+}
+
+const suggestRandomItems = async (req, res) => {
+  try {
+    const suggestions = await getRandomSuggestions();
+
+    res.status(200).json({ suggestions });
+  } catch (error) {
+    console.error("Error generating random suggestions:", error);
+    res.status(500).json({
+      message: "Error generating random suggestions",
+      error: error.message,
+    });
+  }
+};
 
 const addToCart = async (req, res) => {
   try {
@@ -111,4 +153,5 @@ module.exports = {
   viewCart,
   updateCartItemQuantity,
   clearCart,
+  suggestRandomItems,
 };

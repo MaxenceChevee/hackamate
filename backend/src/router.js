@@ -15,6 +15,7 @@ router.get("/users/:id/field", userControllers.read);
 router.put("/users/:id", userControllers.edit);
 router.post("/users", userControllers.add);
 router.post("/login", userControllers.login);
+router.get("/suggestions/random", shoppingCartController.suggestRandomItems);
 router.delete("/users/:id", userControllers.destroy);
 
 router.post("/cart/add", shoppingCartController.addToCart);
