@@ -1,20 +1,19 @@
 [
-    {
-      "id": 1,
-      "linkname": "Home",
-      "linkurl": "/"
-    },
-  
-    {
-      "id": 2,
-      "linkname": "LogIn",
-      "linkurl": "/login"
-    },
-  
-    {
-      "id": 3,
-      "linkname": "Register",
-      "linkurl": "/register"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "linkname": "Accueil",
+    "linkurl": "/"
+  },
+
+  {
+    "id": 2,
+    "linkname": "Se connecter",
+    "linkurl": "/login"
+  },
+
+  {
+    "id": 3,
+    "linkname": "Inscription",
+    "linkurl": "/register"
+  }
+]

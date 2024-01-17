@@ -154,14 +154,14 @@ function Settings() {
     <>
       <NavBar />
       <div className="settings-container">
-        <h2>Settings</h2>
+        <h2>Paramètres</h2>
         <form className="settings-list-container" onSubmit={handleSubmit}>
           <label
             className={`settings-label ${
               errors.firstname ? "error-input" : ""
             }`}
           >
-            First Name:
+            Prénom:
             <input
               type="text"
               name="firstname"
@@ -176,7 +176,7 @@ function Settings() {
           <label
             className={`settings-label ${errors.lastname ? "error-input" : ""}`}
           >
-            Last Name:
+            Nom:
             <input
               type="text"
               name="lastname"
@@ -193,7 +193,7 @@ function Settings() {
               errors.pseudoname ? "error-input" : ""
             }`}
           >
-            Pseudoname:
+            Pseudo:
             <input
               type="text"
               name="pseudoname"
@@ -210,7 +210,7 @@ function Settings() {
               errors.currentPassword ? "error-input" : ""
             }`}
           >
-            Current Password:
+            Mot de passe actuel:
             <input
               type="password"
               name="currentPassword"
@@ -227,7 +227,7 @@ function Settings() {
               errors.newPassword ? "error-input" : ""
             }`}
           >
-            New Password:
+            Nouveau mot de passe:
             <input
               type="password"
               name="newPassword"
@@ -241,7 +241,7 @@ function Settings() {
               errors.confirmNewPassword ? "error-input" : ""
             }`}
           >
-            Confirm New Password:
+            Confirmer le nouveau mot de passe:
             <input
               type="password"
               name="confirmNewPassword"
@@ -262,7 +262,7 @@ function Settings() {
             className="delete-button"
             onClick={handleDeleteAccount}
           >
-            Delete Account
+            Supprimer le compte
           </button>
 
           {errors.general && <p className="error-message">{errors.general}</p>}
@@ -270,7 +270,7 @@ function Settings() {
 
           {showDeletePopup && (
             <Popup onClose={handleCloseDeletePopup} confirmButtonText="Close">
-              <p>Your account has been deleted successfully</p>
+              <p>Votre compte a été supprimé avec succès</p>
             </Popup>
           )}
         </form>
@@ -279,7 +279,7 @@ function Settings() {
         {success && <p>{success}</p>}
         {showPopup && (
           <Popup onClose={closePopup}>
-            <p>Password changed successfully!</p>
+            <p>Le mot de passe a été changé avec succès!</p>
           </Popup>
         )}
       </div>
