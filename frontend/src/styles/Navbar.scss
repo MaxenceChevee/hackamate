@@ -1,7 +1,7 @@
 @import "../styles/variables.scss";
 
 nav {
-  background-color: $color4;
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-between !important;
   align-items: center;
@@ -19,6 +19,7 @@ nav {
   }
 
   .logo {
+    margin-left: 0.8rem;
     max-width: 100%;
     max-height: 100%;
     width: 100%;
@@ -27,7 +28,7 @@ nav {
 
   .title {
     text-align: center;
-    color: white;
+    color: rgb(194, 41, 41);
     flex-grow: 1;
   }
 
@@ -43,7 +44,7 @@ nav {
     font-size: 5vw;
     border: none;
     background: none;
-    color: white;
+    color: black;
     transition: transform 0.3s ease;
   }
 
@@ -55,7 +56,6 @@ nav {
     top: 10vh;
     right: 0;
     width: 6rem !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -67,7 +67,7 @@ nav {
     a,
     button {
       text-decoration: none;
-      color: white;
+      color: black;
       font-weight: bold;
       font-size: 1.2rem;
 
@@ -79,7 +79,7 @@ nav {
     .logout-button {
       padding: 12px;
       background-color: $color4;
-      color: white;
+      color: rgb(214, 34, 34);
       cursor: pointer;
       font-size: 18px;
       border: none;
@@ -104,9 +104,7 @@ nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    border-radius: 0.5rem;
-    background-color: $color4;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
     z-index: 1;
     opacity: 1;
     height: 60%;
@@ -148,7 +146,6 @@ nav {
       top: 10vh;
       right: 0;
       width: 6rem !important;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: opacity 0.3s ease;
     }

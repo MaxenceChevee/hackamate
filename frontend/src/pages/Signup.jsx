@@ -149,11 +149,11 @@ function Signup() {
     <div className="page-container">
       <NavBar />
       <div className="auth-form">
-        <h2>Signup</h2>
+        <h2>S'inscrire</h2>
         {errors.general && <p className="error-message">{errors.general}</p>}
         <form onSubmit={handleSignup} className="form-container">
           <label>
-            Firstname:
+            Prénom:
             <input
               type="text"
               name="firstname"
@@ -166,7 +166,7 @@ function Signup() {
           )}
 
           <label>
-            Lastname:
+            Nom:
             <input
               type="text"
               name="lastname"
@@ -179,7 +179,7 @@ function Signup() {
           )}
 
           <label>
-            Nickname:
+            Surnom:
             <input
               type="text"
               name="pseudoname"
@@ -192,7 +192,7 @@ function Signup() {
           )}
 
           <label>
-            Mail:
+            Email:
             <input
               type="email"
               name="mail"
@@ -204,7 +204,7 @@ function Signup() {
           {errors.email && <p className="error-message">{errors.email}</p>}
 
           <label>
-            Birthdate:
+            Date de naissance:
             <input
               type="date"
               name="birthdate"
@@ -217,7 +217,7 @@ function Signup() {
           )}
 
           <label>
-            Password:
+            Mot de passe:
             <input
               type="password"
               name="password"
@@ -231,7 +231,7 @@ function Signup() {
           </label>
 
           <label>
-            Confirm Password:
+            Confirmez le mot de passe:
             <input
               type="password"
               name="confirmPassword"
@@ -244,18 +244,20 @@ function Signup() {
             <p className="error-message">{errors.confirmPassword}</p>
           )}
 
-          <button type="submit">Signup</button>
+          <button className="btn-signup" type="submit">
+            S'inscrire
+          </button>
           {showSignupPopup && (
             <Popup
               onClose={() => setShowSignupPopup(false)}
               onConfirm={() => navigate("/login")}
             >
-              <p>Your account has been successfully created</p>
+              <p>Votre compte à été créé avec succès</p>
             </Popup>
           )}
         </form>
         <p>
-          Already have an account? <Link to="/login">Login here</Link>
+          Vous avez déjà un compte? <Link to="/login">Login here</Link>
         </p>
       </div>
     </div>
