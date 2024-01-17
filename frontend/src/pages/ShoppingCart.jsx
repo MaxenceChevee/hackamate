@@ -1,5 +1,5 @@
 function ShoppingCart() {
-  return <p>page ShoppingCart</p>;
+  return <p>page Panier</p>;
 }
 
 export default ShoppingCart;

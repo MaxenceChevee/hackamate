@@ -1,19 +1,19 @@
 [
   {
     "id": 1,
-    "linkname": "Home",
+    "linkname": "Accueil",
     "linkurl": "/"
   },
 
   {
     "id": 2,
-    "linkname": "Logout",
+    "linkname": "Se déconnecter",
     "linkurl": "/",
     "action": "logout"
   },
   {
     "id": 3,
-    "linkname": "Settings",
+    "linkname": "Paramètres",
     "linkurl": "/settings"
   }
 ]

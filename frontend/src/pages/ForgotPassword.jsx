@@ -39,7 +39,7 @@ function ForgotPassword() {
     <>
       <NavBar />
       <div className="auth-form">
-        <h2>Forgot Password</h2>
+        <h2>Mot de passe oublié</h2>
         <form onSubmit={handleSubmit} className="form-container">
           <label>
             Email:
@@ -54,12 +54,16 @@ function ForgotPassword() {
           </button>
         </form>
         <p>
-          Remember your password? <Link to="/login">Login here</Link>
+          Vous vous souvenez de votre mot de passe ?{" "}
+          <Link to="/login">Connectez-vous ici</Link>
         </p>
         {error && <p className="error-message">{error}</p>}
         {showPopup && (
           <Popup onClose={handleClosePopup} confirmButtonText="Close">
-            <p>Password reset instructions sent to your email</p>
+            <p>
+              Instructions de réinitialisation du mot de passe envoyées à votre
+              adresse e-mail
+            </p>
           </Popup>
         )}
       </div>
