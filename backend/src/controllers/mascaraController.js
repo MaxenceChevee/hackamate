@@ -23,8 +23,9 @@ const readAll = async (req, res) => {
 
 const add = async (req, res) => {
   try {
-    const { codeColor, nameColor, quantity, effect, price } = req.body;
+    const { name, codeColor, nameColor, quantity, effect, price } = req.body;
     const newMascaraId = await MascaraManager.create({
+      name,
       codeColor,
       nameColor,
       quantity,

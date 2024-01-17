@@ -6,11 +6,11 @@ class MascaraManager extends AbstractManager {
   }
 
   async create(mascara) {
-    const { codeColor, nameColor, quantity, effect, price } = mascara;
+    const { name, codeColor, nameColor, quantity, effect, price } = mascara;
 
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (code_color, name_color, quantity, effect, price) VALUES (?, ?, ?, ?, ?)`,
-      [codeColor, nameColor, quantity, effect, price]
+      `INSERT INTO ${this.table} (name, code_color, name_color, quantity, effect, price) VALUES (?, ?, ?, ?, ?)`,
+      [name, codeColor, nameColor, quantity, effect, price]
     );
 
     return result.insertId;
@@ -49,6 +49,7 @@ class MascaraManager extends AbstractManager {
 
   async edit(id, updatedFields) {
     const allowedFields = [
+      "name",
       "codeColor",
       "nameColor",
       "quantity",

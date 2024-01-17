@@ -22,8 +22,9 @@ const readAll = async (req, res) => {
 
 const add = async (req, res) => {
   try {
-    const { codeColor, nameColor, weight, aspect, price } = req.body;
+    const { name, codeColor, nameColor, weight, aspect, price } = req.body;
     const newLipstickId = await LipstickManager.create({
+      name,
       codeColor,
       nameColor,
       weight,

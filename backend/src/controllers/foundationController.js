@@ -22,8 +22,9 @@ const readAll = async (req, res) => {
 
 const add = async (req, res) => {
   try {
-    const { codeColor, nameColor, quantity, aspect, price } = req.body;
+    const { name, codeColor, nameColor, quantity, aspect, price } = req.body;
     const newFoundationId = await FoundationManager.create({
+      name,
       codeColor,
       nameColor,
       quantity,
