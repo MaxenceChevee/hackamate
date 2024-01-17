@@ -80,6 +80,11 @@ class FoundationManager extends AbstractManager {
   async delete(id) {
     await this.database.query(`DELETE FROM ${this.table} WHERE id = ?`, [id]);
   }
+
+  async find() {
+    const [rows] = await this.database.query(`SELECT * FROM ${this.table}`);
+    return rows;
+  }
 }
 
 module.exports = FoundationManager;
