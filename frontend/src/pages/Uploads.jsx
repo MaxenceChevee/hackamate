@@ -9,9 +9,11 @@ function Uploads() {
   const handleAnalyzer = () => {
     setIsLoading(true);
     axios
-      .get(`${process.env.VITE_BACKEND_URL}/api/getRandomProducts`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}/api/suggestions/random`)
       .then((response) => {
-        setAnalyzeResult(response.data);
+        // eslint-disable-next-line no-restricted-syntax
+        console.log(response.data.suggestions);
+        setAnalyzeResult(response.data.suggestions);
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
@@ -49,15 +51,27 @@ function Uploads() {
         <section>
           <h2>titre</h2>
           <img src={image} alt="upload" />
-          {analyzeResult.map((product) => (
-            <section>
-              <img src={product.img} alt="product" />
-              <div>
-                <h3>{product.title}</h3>
-                <p>{product.nameColor}</p>
-              </div>
-            </section>
-          ))}
+          <section>
+            <img src={analyzeResult.foundation1.image_link} alt="product" />
+            <div>
+              <h3>{analyzeResult.foundation1.name}</h3>
+              <p>{analyzeResult.foundation1.nameColor}</p>
+            </div>
+          </section>
+          <section>
+            <img src={analyzeResult.lipstick1.image_link} alt="product" />
+            <div>
+              <h3>{analyzeResult.lipstick1.name}</h3>
+              <p>{analyzeResult.lipstick1.nameColor}</p>
+            </div>
+          </section>
+          <section>
+            <img src={analyzeResult.mascara1.image_link} alt="product" />
+            <div>
+              <h3>{analyzeResult.mascara1.name}</h3>
+              <p>{analyzeResult.mascara1.nameColor}</p>
+            </div>
+          </section>
         </section>
       )}
     </>
