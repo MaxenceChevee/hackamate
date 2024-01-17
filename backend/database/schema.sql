@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE mascara (
   id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
   codeColor VARCHAR(30) NOT NULL,
   nameColor VARCHAR(30) NOT NULL,
   quantity INT NOT NULL,
@@ -18,6 +19,7 @@ CREATE TABLE mascara (
 
 CREATE TABLE foundation (
   id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
   codeColor VARCHAR(30) NOT NULL,
   nameColor VARCHAR(30) NOT NULL,
   quantity INT NOT NULL,
@@ -29,6 +31,7 @@ CREATE TABLE foundation (
 
 CREATE TABLE lipstick (
   id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
   codeColor VARCHAR(30) NOT NULL,
   nameColor VARCHAR(30) NOT NULL,
   weight INT NOT NULL,

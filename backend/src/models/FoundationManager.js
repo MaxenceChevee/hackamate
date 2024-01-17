@@ -6,11 +6,11 @@ class FoundationManager extends AbstractManager {
   }
 
   async create(foundation) {
-    const { codeColor, nameColor, quantity, aspect, price } = foundation;
+    const { name, codeColor, nameColor, quantity, aspect, price } = foundation;
 
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (code_color, name_color, quantity, aspect, price) VALUES (?, ?, ?, ?, ?)`,
-      [codeColor, nameColor, quantity, aspect, price]
+      `INSERT INTO ${this.table} (name, code_color, name_color, quantity, aspect, price) VALUES (?, ?, ?, ?, ?, ?)`,
+      [name, codeColor, nameColor, quantity, aspect, price]
     );
 
     return result.insertId;
@@ -49,6 +49,7 @@ class FoundationManager extends AbstractManager {
 
   async edit(id, updatedFields) {
     const allowedFields = [
+      "name",
       "codeColor",
       "nameColor",
       "quantity",
