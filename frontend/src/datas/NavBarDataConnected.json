@@ -15,5 +15,17 @@
     "id": 3,
     "linkname": "Paramètres",
     "linkurl": "/settings"
+  },
+  
+  {
+    "id": 4,
+    "linkname": "Importer",
+    "linkurl": "/analyzer/uploads"
+  },
+  
+  {
+    "id": 5,
+    "linkname": "Panier",
+    "linkurl": "/shopping-cart"
   }
 ]

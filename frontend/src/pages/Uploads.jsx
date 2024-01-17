@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import NavBar from "../components/NavBar";
 
 function Uploads() {
   const [image, setImage] = useState(null);
@@ -25,6 +26,7 @@ function Uploads() {
   };
   return (
     <>
+      <NavBar />
       {!analyzeResult && !isLoading && (
         <section>
           <h2>titreeee</h2>
