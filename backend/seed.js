@@ -26,28 +26,34 @@ const seed = async () => {
 
     queries.push(
       database.query(
-        `INSERT INTO mascara (codeColor, nameColor, quantity, effect, price, image_link) VALUES
-      ('ABC123', 'Beige', 10, 'Lengthening', 20.99, 'https://example.com/mascara1.jpg'),
-      ('DEF456', 'Rose', 15, 'Volumizing', 25.99, 'https://example.com/mascara2.jpg'),
-      ('GHI789', 'Tan', 8, 'Curling', 18.99, 'https://example.com/mascara3.jpg')`
+        `INSERT INTO mascara (name, codeColor, nameColor, quantity, effect, price, image_link) VALUES
+      ('Brow artist mascara perfecteur sourcils etoffés', '#F3F3F3', 'Transparent', 10, 'Volumateur', 19.95, 'https://postimg.cc/f3WMhVrz'),
+      ('Age perfect mascara densifiant', '#391E17', 'Marron', 9, 'Densifieur', 12.90, 'https://postimg.cc/2VfJJVyV'),
+      ('Telescopic', '#231F20', 'Noir', 12, 'Allongement', 14.50, 'https://postimg.cc/6Td2wmWY'),
+      ('Mascara panorama volume millions de cils', '#53352D', 'Marron', 10, 'Volumateur', 12.90, 'https://postimg.cc/zLxB3sb1'),
+      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://postimg.cc/XZvbpp6s')`
       )
     );
 
     queries.push(
       database.query(
-        `INSERT INTO foundation (codeColor, nameColor, quantity, aspect, price, image_link) VALUES
-      ('JKL012', 'Red', 5, 'Matte', 15.99, 'https://example.com/foundation1.jpg'),
-      ('MNO345', 'Pink', 4, 'Glossy', 12.99, 'https://example.com/foundation2.jpg'),
-      ('PQR678', 'Brown', 6, 'Satin', 17.99, 'https://example.com/foundation3.jpg')`
+        `INSERT INTO foundation (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
+      ('Fond de teint accord parfait', '#BE815B', 'Soleil rose', 20, 'Mate', 14, 'https://postimg.cc/crK82M9c'),
+      ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://postimg.cc/FYzd3bcS'),
+      ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://postimg.cc/jW7zHP9M'),
+      ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://postimg.cc/Fd08BffZ'),
+      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 'https://postimg.cc/s1MxLsKh')`
       )
     );
 
     queries.push(
       database.query(
-        `INSERT INTO lipstick (codeColor, nameColor, weight, aspect, price, image_link) VALUES
-      ('STU901', 'Black', 20, 'Matte', 14.99, 'https://example.com/lipstick1.jpg'),
-      ('VWX234', 'Brown', 15, 'Satin', 16.99, 'https://example.com/lipstick2.jpg'),
-      ('YZA567', 'Blue', 12, 'Glossy', 19.99, 'https://example.com/lipstick3.jpg')`
+        `INSERT INTO lipstick (name, codeColor, nameColor, weight, aspect, price, image_link) VALUES
+      ('Color riche rouge à lèvres', '#AF6B6E', 'Le nude admirable', 30, 'Matte', 16.99, 'https://postimg.cc/m11Ywnm1'),
+      ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://postimg.cc/MXQbndGM'),
+      ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://postimg.cc/8sP401KD'),
+      ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://postimg.cc/3ynxwCgk'),
+      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://postimg.cc/LJdFLHLk')`
       )
     );
 
