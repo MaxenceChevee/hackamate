@@ -1,0 +1,13 @@
+@import "./variables.scss";
+
+.HomeComponent {
+  margin: 1rem;
+  .title_home {
+    color: white;
+    font-size: 28px;
+  }
+  .desc_home {
+    color: white;
+    line-height: 1.5rem;
+  }
+}

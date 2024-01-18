@@ -6,9 +6,9 @@ function Home() {
     <>
       <NavBar />
       <div className="HomeComponent">
-        <h1>Accueil</h1>
+        <h1 className="title_home">Accueil</h1>
 
-        <p>
+        <p className="desc_home">
           Découvrez toutes nos gammes de fond de teint, et testez sur votre peau
           celui qui vous correspond le mieux grâce à notre simulateur.
         </p>
