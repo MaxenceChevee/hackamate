@@ -34,10 +34,16 @@ function Uploads() {
   };
 
   const handleSubmit = (selectProduct) => {
-    const arrayProduct = { id: selectProduct.id, name: selectProduct.name };
+    const arrayProduct = {
+      id: selectProduct.id,
+      name: selectProduct.name,
+      image: selectProduct.image_link,
+      quantity: selectProduct.quantity,
+      nameColor: selectProduct.nameColor,
+      codeColor: selectProduct.codeColor,
+    };
     setProducts([...products, arrayProduct]);
   };
-
   const handleCounter = () => {
     setCounter(counter + 1);
   };
@@ -103,8 +109,9 @@ function Uploads() {
       )}
 
       {isLoading && !analyzeResult && (
-        <section className="page_uploads">
-          <img src={image} alt="upload" />
+        <section className="page_uploads_monitor">
+          <hr className="scan_uploads" />
+          <img className="screen_uploads" src={image} alt="upload" />
           <p className="in_progress">Chargement en cours</p>
         </section>
       )}
@@ -140,7 +147,7 @@ function Uploads() {
                     className="valide_result"
                     type="button"
                   >
-                    Panier
+                    Ajouter au panier
                   </button>
                 </div>
                 <hr />

@@ -30,10 +30,10 @@ function NavBar() {
 
   const loggedInLinks = [
     { id: 1, linkname: "Accueil", linkurl: "/" },
-    { id: 2, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
+    { id: 2, linkname: "Panier", linkurl: "/shopping-cart" },
     { id: 3, linkname: "Paramètres", linkurl: "/settings" },
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
-    { id: 5, linkname: "Panier", linkurl: "/shopping-cart" },
+    { id: 5, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
   ];
 
   const loggedOutLinks = [

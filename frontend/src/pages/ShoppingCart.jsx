@@ -1,37 +1,34 @@
-import React, { useState, useEffect } from "react";
-// import axios from "axios";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { productContext } from "../context/ProductsContext";
 import "../styles/ShoppingCart.scss";
 
 function ShoppingCart() {
-  const { userId } = useParams();
-  // eslint-disable-next-line no-unused-vars
-  const [cart, setCart] = useState(null);
-  // eslint-disable-next-line no-unused-vars
-  const [cartItems, setCartItems] = useState(null);
+  const { products, setProducts, removeProduct } = useContext(productContext);
+  const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const loadCart = async () => {
+  const loadCart = () => {
     try {
-      if (!userId) {
-        console.error("User ID is undefined.");
-      }
-
-      // axios
-      //   .get(`${import.meta.env.VITE_BACKEND_URL}/api/cart/view/${userId}`)
-      //   .then((response) => {
-      //     console.log(response.data);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
+      const storedItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
+      setCartItems(storedItems);
     } catch (error) {
       console.error("Error loading cart:", error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const removeFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCart);
+    sessionStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  };
+
+  const clearProducts = () => {
+    sessionStorage.removeItem("products");
+    setProducts([]);
   };
 
   useEffect(() => {
@@ -47,38 +44,50 @@ function ShoppingCart() {
       <NavBar />
       <div className="container_shop">
         <h1 className="title_shop">Shopping Cart</h1>
-        {cart && (
-          <div>
-            <p>Cart ID: {cart.id}</p>
-            {cartItems && cartItems.length > 0 ? (
-              <ul>
-                {cartItems.map((item) => (
-                  <li key={item.id}>
-                    {item.quantity} x {item.itemType} - {item.itemId}
-                    <button
-                      type="button"
-                      // eslint-disable-next-line no-undef
-                      onClick={() => removeFromCart(item.itemId)}
-                    >
-                      Remove
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>Your cart is empty.</p>
-            )}
-            <button
-              type="button"
-              onClick={() => {
-                // eslint-disable-next-line no-undef
-                clearCart(cart.id);
-              }}
-            >
-              Clear Cart
-            </button>
-          </div>
-        )}
+
+        <ul>
+          {cartItems.map((item) => (
+            <li key={item.id}>
+              {item.quantity} x {item.name} - {item.id}
+              {item.image && <img src={item.image} alt={item.name} />}{" "}
+              {/* Afficher l'image si elle existe */}
+              <p>Color: {item.nameColor}</p>
+              <div
+                className="color_result"
+                style={{
+                  backgroundColor: item.codeColor,
+                  width: "1.5rem",
+                  height: "1.5rem",
+                }}
+              />
+              <button type="button" onClick={() => removeFromCart(item.id)}>
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <h2>Votre panier:</h2>
+        <ul>
+          {products.map((product) => (
+            <li key={product.id}>
+              {product.name} - {product.id}
+              {product.image && (
+                <img src={product.image} alt={product.name} />
+              )}{" "}
+              {/* Afficher l'image si elle existe */}
+              <p>Color: {product.nameColor}</p>
+              <p>Code Color: {product.codeColor}</p>
+              <button type="button" onClick={() => removeProduct(product.id)}>
+                Supprimer
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <button type="button" onClick={clearProducts}>
+          Vider tout le panier
+        </button>
       </div>
       <Footer />
     </>

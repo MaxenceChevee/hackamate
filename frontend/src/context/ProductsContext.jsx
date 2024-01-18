@@ -6,9 +6,19 @@ const productContext = createContext();
 
 function ProductProvider({ children }) {
   const [products, setProducts] = useSessionStorage("products", []);
+  const [cartItems, setCartItems] = useSessionStorage("cartItems", []);
+
+  const removeProduct = (productId) => {
+    const updatedProducts = products.filter(
+      (product) => product.id !== productId
+    );
+    setProducts(updatedProducts);
+    sessionStorage.setItem("products", JSON.stringify(updatedProducts));
+  };
+
   const product = useMemo(
-    () => ({ products, setProducts }),
-    [products, setProducts]
+    () => ({ products, setProducts, cartItems, setCartItems, removeProduct }),
+    [products, setProducts, cartItems, setCartItems]
   );
 
   return (
