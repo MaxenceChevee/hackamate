@@ -3,6 +3,8 @@ import axios from "axios";
 import NavBar from "../components/NavBar";
 import "../styles/Uploads.scss";
 import { productContext } from "../context/ProductsContext";
+import Footer from "../components/Footer";
+
 
 function Uploads() {
   const [image, setImage] = useState(null);
@@ -94,6 +96,7 @@ function Uploads() {
           })}
         </section>
       )}
+      <Footer />
     </>
   );
 }

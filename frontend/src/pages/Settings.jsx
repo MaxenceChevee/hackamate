@@ -154,7 +154,7 @@ function Settings() {
     <>
       <NavBar />
       <div className="settings-container">
-        <h2>Paramètres</h2>
+        <h2 className="title_setting">Paramètres</h2>
         <form className="settings-list-container" onSubmit={handleSubmit}>
           <label
             className={`settings-label ${
