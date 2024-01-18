@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
+import "../styles/Uploads.scss";
 
 function Uploads() {
   const [image, setImage] = useState(null);
@@ -30,12 +31,17 @@ function Uploads() {
     <>
       <NavBar />
       {!analyzeResult && !isLoading && (
-        <section>
-          <h2>Titre</h2>
+        <section className="page_uploads">
+          <h1 className="title_uploads">Import</h1>
           {image && <img src={image} alt="upload" />}
-          <input type="file" onChange={handleChange} />
+          <input
+            type="file"
+            className="select_uploads"
+            onChange={handleChange}
+          />
           <button
             type="button"
+            className="valide_uploads"
             onClick={() => handleAnalyzer()}
             disabled={!image}
           >
@@ -45,28 +51,33 @@ function Uploads() {
       )}
 
       {isLoading && !analyzeResult && (
-        <section>
+        <section className="page_uploads">
           <img src={image} alt="upload" />
-          <p>Chargement en cours</p>
+          <p className="in_progress">Chargement en cours</p>
         </section>
       )}
 
       {analyzeResult && !isLoading && (
-        <section>
+        <section className="page_uploads_result">
           {analyzeResult.map((result) => {
             return (
-              <div>
-                <p>{result.name}</p>
-                <img src={result.image_link} alt="maquillage" />
-                <p>{result.nameColor}</p>
+              <div className="container_result">
+                <p className="desc_result">{result.name}</p>
+                <img
+                  className="img_result"
+                  src={result.image_link}
+                  alt="maquillage"
+                />
+                <p className="text_color_result">{result.nameColor}</p>
                 <div
+                  className="color_result"
                   style={{
                     backgroundColor: result.codeColor,
-                    width: "5rem",
-                    height: "5rem",
+                    width: "1.5rem",
+                    height: "1.5rem",
                   }}
                 />
-                <p>{result.quantity}ml</p>
+                <p className="quantity_result">{result.quantity}ml</p>
               </div>
             );
           })}
