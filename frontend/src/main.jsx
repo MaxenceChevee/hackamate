@@ -55,7 +55,7 @@ function Main() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shopping-cart/:userId" element={<ShoppingCart />} />
+        <Route path="/shopping-cart" element={<ShoppingCart />} />
         <Route path="/analyzer/uploads" element={<Uploads />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
         <Route

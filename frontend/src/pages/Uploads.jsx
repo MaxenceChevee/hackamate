@@ -34,10 +34,16 @@ function Uploads() {
   };
 
   const handleSubmit = (selectProduct) => {
-    const arrayProduct = { id: selectProduct.id, name: selectProduct.name };
+    const arrayProduct = {
+      id: selectProduct.id,
+      name: selectProduct.name,
+      image: selectProduct.image_link,
+      quantity: selectProduct.quantity,
+      nameColor: selectProduct.nameColor,
+      codeColor: selectProduct.codeColor,
+    };
     setProducts([...products, arrayProduct]);
   };
-
   const handleCounter = () => {
     setCounter(counter + 1);
   };
@@ -132,7 +138,7 @@ function Uploads() {
                     className="valide_result"
                     type="button"
                   >
-                    Panier
+                    Ajouter au panier
                   </button>
                 </div>
                 <hr />
