@@ -111,13 +111,12 @@ img {
   text-align: center;
 
   .screen_uploads {
-    max-width: 100%;
-    margin: 0;
+    margin: 0 auto;
   }
   .scan_uploads {
     margin: 0;
-    position: absolute;
-    width: 88%;
+    position: sticky;
+    width: 100%;
     height: 10px;
     background-color: rgba(226, 226, 226, 0.342);
     animation: scan 5s infinite;
@@ -133,4 +132,13 @@ img {
       top: 14%;
     }
   }
+}
+
+.pouce_uploads {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  border: 4px solid black;
 }
