@@ -49,7 +49,13 @@ function ShoppingCart() {
           {cartItems.map((item) => (
             <li key={item.id}>
               {item.quantity} x {item.name} - {item.id}
-              {item.image && <img src={item.image} alt={item.name} />}{" "}
+              {item.image && (
+                <img
+                  className="shopcart_img"
+                  src={item.image}
+                  alt={item.name}
+                />
+              )}{" "}
               {/* Afficher l'image si elle existe */}
               <p>Color: {item.nameColor}</p>
               <div
