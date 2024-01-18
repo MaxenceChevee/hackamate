@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "../styles/Home.scss";
 
@@ -13,6 +14,7 @@ function Home() {
           celui qui vous correspond le mieux grâce à notre simulateur.
         </p>
       </div>
+      <Footer />
     </>
   );
 }

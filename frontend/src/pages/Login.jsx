@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import { useAuth } from "../context/AuthContext";
 import Popup from "../components/Popup";
 import "../styles/Login.scss";
+import Footer from "../components/Footer";
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -92,6 +93,7 @@ export default function Login() {
           </Popup>
         )}
       </div>
+      <Footer />
     </>
   );
 }
