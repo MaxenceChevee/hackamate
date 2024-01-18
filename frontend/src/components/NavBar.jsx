@@ -33,7 +33,8 @@ function NavBar() {
     { id: 2, linkname: "Panier", linkurl: "/shopping-cart" },
     { id: 3, linkname: "Paramètres", linkurl: "/settings" },
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
-    { id: 5, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
+    { id: 5, linkname: "Contact", linkurl: "/contact" },
+    { id: 6, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
   ];
 
   const loggedOutLinks = [
@@ -42,6 +43,7 @@ function NavBar() {
     { id: 3, linkname: "Inscription", linkurl: "/register" },
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
     { id: 5, linkname: "Panier", linkurl: "/shopping-cart" },
+    { id: 6, linkname: "Contact", linkurl: "/contact" },
   ];
 
   const navbardata = user ? loggedInLinks : loggedOutLinks;

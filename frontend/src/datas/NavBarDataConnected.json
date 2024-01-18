@@ -23,6 +23,11 @@
   },
   {
     "id": 5,
+    "linkname": "Contact",
+    "linkurl": "/contact"
+  },
+  {
+    "id": 6,
     "linkname": "Se déconnecter",
     "linkurl": "/",
     "action": "logout"
