@@ -36,7 +36,7 @@ const seed = async () => {
       ('Mascara Lash Paradise Waterproof', '#000000', 'Noir', 15, 'Volumateur', 11.50, 'https://postimg.cc/LYT1wzcH'),
       ('Mascara Lash Paradise Noir Intense', '#000000', 'Noir', 13, 'Densifieur', 14, 'https://postimg.cc/zbjx7Hph'),
       ('Mascara Bambi Eye Faux Cils Waterproof', '#000000', 'Noir', 15, 'Bouclage', 17, 'https://postimg.cc/YGmvw0ds'),
-      ('Volume Millions de Cils Mascara volume intense et soin', ''#000000', 'Noir', 10, 'Allongemnt', 15, 'https://postimg.cc/BjvgWWK1')`
+      ('Volume Millions de Cils Mascara volume intense et soin', '#000000', 'Noir', 10, 'Allongemnt', 15, 'https://postimg.cc/BjvgWWK1')`
       )
     );
 
@@ -53,17 +53,17 @@ const seed = async () => {
 
     queries.push(
       database.query(
-        `INSERT INTO lipstick (name, codeColor, nameColor, weight, aspect, price, image_link) VALUES
+        `INSERT INTO lipstick (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
       ('Color riche rouge à lèvres', '#AF6B6E', 'Le nude admirable', 30, 'Matte', 16.99, 'https://postimg.cc/m11Ywnm1'),
       ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://postimg.cc/MXQbndGM'),
       ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://postimg.cc/8sP401KD'),
       ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://postimg.cc/3ynxwCgk'),
       ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://postimg.cc/LJdFLHLk'),
-      ('L'Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://postimg.cc/BjvgWWK1'),
+      ('L&#39;Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://postimg.cc/BjvgWWK1'),
       ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://postimg.cc/xcWbjWkZ'),
       ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://postimg.cc/xcWbjWkZ'),
-      ('Color riche rouge à lèvres mat', '#C74D5C, 'Frappez une rose', 25, 'Mate', 16.99, 'https://postimg.cc/7fzT2yWS'),
-      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L'autonomie', 20, 'Brillant', 17, 'https://postimg.cc/4m3wpnTj')`
+      ('Color riche rouge à lèvres mat', '#C74D5C', 'Frappez une rose', 25, 'Mate', 16.99, 'https://postimg.cc/7fzT2yWS'),
+      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L&#39;autonomie', 20, 'Brillant', 17, 'https://postimg.cc/4m3wpnTj')`
       )
     );
 

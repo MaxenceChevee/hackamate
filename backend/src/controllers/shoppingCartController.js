@@ -20,17 +20,11 @@ async function getRandomSuggestions() {
       lipstickManager.find(),
     ]);
 
-    return {
-      mascara1: getRandomElement(mascaras),
-      mascara2: getRandomElement(mascaras),
-      mascara3: getRandomElement(mascaras),
-      foundation1: getRandomElement(foundations),
-      foundation2: getRandomElement(foundations),
-      foundation3: getRandomElement(foundations),
-      lipstick1: getRandomElement(lipsticks),
-      lipstick2: getRandomElement(lipsticks),
-      lipstick3: getRandomElement(lipsticks),
-    };
+    return [
+      getRandomElement(mascaras),
+      getRandomElement(foundations),
+      getRandomElement(lipsticks),
+    ];
   } catch (error) {
     throw new Error(`Error generating random suggestions: ${error.message}`);
   }
@@ -61,7 +55,6 @@ const addToCart = async (req, res) => {
     if (!cart) {
       cart = await shoppingCartManager.create({ userId });
     }
-
     await shoppingCartManager.addItem(cart.id, itemId, itemType, quantity);
 
     res.status(201).json({ message: "Item added to cart successfully" });
@@ -104,7 +97,6 @@ const viewCart = async (req, res) => {
     }
 
     const cartItems = await shoppingCartManager.getCartItems(cart.id);
-
     res.status(200).json({ cart, items: cartItems });
   } catch (error) {
     console.error("Error viewing cart:", error);

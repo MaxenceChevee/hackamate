@@ -9,15 +9,17 @@ function Uploads() {
 
   const handleAnalyzer = () => {
     setIsLoading(true);
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/api/suggestions/random`)
-      .then((response) => {
-        // eslint-disable-next-line no-restricted-syntax
-        console.log(response.data.suggestions);
-        setAnalyzeResult(response.data.suggestions);
-        setIsLoading(false);
-      })
-      .catch((err) => console.error(err));
+    setTimeout(() => {
+      axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/api/suggestions/random`)
+        .then((response) => {
+          // eslint-disable-next-line no-restricted-syntax
+          console.log(response.data.suggestions);
+          setAnalyzeResult(response.data.suggestions);
+          setIsLoading(false);
+        })
+        .catch((err) => console.error(err));
+    }, 3000);
   };
 
   const handleChange = (e) => {
@@ -29,7 +31,7 @@ function Uploads() {
       <NavBar />
       {!analyzeResult && !isLoading && (
         <section>
-          <h2>titreeee</h2>
+          <h2>Titre</h2>
           {image && <img src={image} alt="upload" />}
           <input type="file" onChange={handleChange} />
           <button
@@ -45,35 +47,29 @@ function Uploads() {
       {isLoading && !analyzeResult && (
         <section>
           <img src={image} alt="upload" />
-          <p>en chargement</p>
+          <p>Chargement en cours</p>
         </section>
       )}
 
       {analyzeResult && !isLoading && (
         <section>
-          <h2>titre</h2>
-          <img src={image} alt="upload" />
-          <section>
-            <img src={analyzeResult.foundation1.image_link} alt="product" />
-            <div>
-              <h3>{analyzeResult.foundation1.name}</h3>
-              <p>{analyzeResult.foundation1.nameColor}</p>
-            </div>
-          </section>
-          <section>
-            <img src={analyzeResult.lipstick1.image_link} alt="product" />
-            <div>
-              <h3>{analyzeResult.lipstick1.name}</h3>
-              <p>{analyzeResult.lipstick1.nameColor}</p>
-            </div>
-          </section>
-          <section>
-            <img src={analyzeResult.mascara1.image_link} alt="product" />
-            <div>
-              <h3>{analyzeResult.mascara1.name}</h3>
-              <p>{analyzeResult.mascara1.nameColor}</p>
-            </div>
-          </section>
+          {analyzeResult.map((result) => {
+            return (
+              <div>
+                <p>{result.name}</p>
+                <img src={result.image_link} alt="maquillage" />
+                <p>{result.nameColor}</p>
+                <div
+                  style={{
+                    backgroundColor: result.codeColor,
+                    width: "5rem",
+                    height: "5rem",
+                  }}
+                />
+                <p>{result.quantity}ml</p>
+              </div>
+            );
+          })}
         </section>
       )}
     </>

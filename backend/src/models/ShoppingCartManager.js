@@ -21,7 +21,7 @@ class ShoppingCartManager extends AbstractManager {
     );
 
     if (rows.length === 0) {
-      return null;
+      return [];
     }
 
     return rows[0];
