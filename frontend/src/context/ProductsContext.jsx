@@ -4,11 +4,10 @@ import PropTypes from "prop-types";
 const productContext = createContext();
 
 function ProductProvider({ children }) {
-  const [products, setProducts] = useState(null);
-  const [idProducts, setIdProducts] = useState(null);
+  const [products, setProducts] = useState([]);
   const product = useMemo(
-    () => ({ products, setProducts, idProducts, setIdProducts }),
-    [products, setProducts, idProducts, setIdProducts]
+    () => ({ products, setProducts }),
+    [products, setProducts]
   );
 
   return (
