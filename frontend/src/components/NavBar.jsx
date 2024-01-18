@@ -80,6 +80,7 @@ function NavBar() {
           </>
         ))}
       </ul>
+      <span className="bottom"> </span>
     </nav>
   );
 }

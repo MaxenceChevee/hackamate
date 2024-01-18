@@ -35,11 +35,17 @@ function Uploads() {
   };
 
   const handleSubmit = (selectProduct) => {
-    const arrayProduct = { id: selectProduct.id, name: selectProduct.name };
+    const arrayProduct = {
+      id: selectProduct.id,
+      name: selectProduct.name,
+      image: selectProduct.image_link,
+      quantity: selectProduct.quantity,
+      nameColor: selectProduct.nameColor,
+      codeColor: selectProduct.codeColor,
+    };
     setProducts([...products, arrayProduct]);
     setIsShoppingCart(true);
   };
-
   const handleCounter = () => {
     setCounter(counter + 1);
   };
@@ -63,16 +69,24 @@ function Uploads() {
           <h1 className="title_uploads">Import</h1>
           {isValidateImg && (
             <section className="popup_uploads">
-              <h3>Decrivez votre peau</h3>
-              <div>
-                <input type="checkbox" />
-                <p>Avez-vous des allergies ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous des cicatrices ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau sèche ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau grasse ?</p>
+              <h2>Decrivez votre peau</h2>
+              <div className="check_uploads">
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des allergies ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des cicatrices ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau sèche ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau grasse ?</p>
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -80,6 +94,7 @@ function Uploads() {
                   handleValidateImg();
                 }}
                 type="button"
+                className="valide_uploads"
               >
                 Valider
               </button>
@@ -148,7 +163,7 @@ function Uploads() {
                     className="valide_result"
                     type="button"
                   >
-                    Panier
+                    Ajouter au panier
                   </button>
                 </div>
                 <hr />
