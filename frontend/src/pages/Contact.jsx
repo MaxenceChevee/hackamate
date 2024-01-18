@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import "../styles/Contact.scss";
 
 function Contact() {
   const [email, setEmail] = useState("");
@@ -36,9 +37,11 @@ function Contact() {
   return (
     <section className="contact">
       <NavBar />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
+      <form className="form_contact" onSubmit={handleSubmit}>
+        <div className="container_label">
+          <label className="text_label_contact" htmlFor="firstName">
+            First Name:
+          </label>
           <input
             type="text"
             id="firstName"
@@ -47,8 +50,10 @@ function Contact() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
+        <div className="container_label">
+          <label className="text_label_contact" htmlFor="lastName">
+            Last Name:
+          </label>
           <input
             type="text"
             id="lastName"
@@ -57,8 +62,10 @@ function Contact() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
+        <div className="container_label">
+          <label className="text_label_contact" htmlFor="email">
+            Email:
+          </label>
           <input
             type="email"
             id="email"
@@ -67,8 +74,10 @@ function Contact() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="message">Message:</label>
+        <div className="container_label">
+          <label className="text_label_contact" htmlFor="message">
+            Message:
+          </label>
           <textarea
             id="message"
             value={message}
@@ -77,7 +86,9 @@ function Contact() {
           />
         </div>
 
-        <button type="submit">Send Message</button>
+        <button className="btn_contact" type="submit">
+          Send Message
+        </button>
       </form>
       <Footer />
     </section>
