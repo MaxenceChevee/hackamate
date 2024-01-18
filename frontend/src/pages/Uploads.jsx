@@ -5,12 +5,12 @@ import "../styles/Uploads.scss";
 import { productContext } from "../context/ProductsContext";
 import Footer from "../components/Footer";
 
-
 function Uploads() {
   const [image, setImage] = useState(null);
   const [analyzeResult, setAnalyzeResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { setProducts, setIdProducts } = useContext(productContext);
+  const [counter, setCounter] = useState(0);
+  const { setProducts, products } = useContext(productContext);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -33,8 +33,12 @@ function Uploads() {
   };
 
   const handleSubmit = (selectProduct) => {
-    setIdProducts(selectProduct.id);
-    setProducts(selectProduct.name);
+    const arrayProduct = { id: selectProduct.id, name: selectProduct.name };
+    setProducts([...products, arrayProduct]);
+  };
+
+  const handleCounter = () => {
+    setCounter(counter + 1);
   };
 
   return (
@@ -69,6 +73,7 @@ function Uploads() {
 
       {analyzeResult && !isLoading && (
         <section className="page_uploads_result">
+          <p>produit dans le panier {counter}</p>
           {analyzeResult.map((result) => {
             return (
               <div className="container_result" key={result.id}>
@@ -88,7 +93,13 @@ function Uploads() {
                   }}
                 />
                 <p className="quantity_result">{result.quantity}ml</p>
-                <button onClick={() => handleSubmit(result)} type="button">
+                <button
+                  onClick={() => {
+                    handleSubmit(result);
+                    handleCounter();
+                  }}
+                  type="button"
+                >
                   Panier
                 </button>
               </div>
