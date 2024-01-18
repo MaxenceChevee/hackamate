@@ -106,3 +106,31 @@ img {
     }
   }
 }
+.page_uploads_monitor {
+  margin: 1.4rem;
+  text-align: center;
+
+  .screen_uploads {
+    max-width: 100%;
+    margin: 0;
+  }
+  .scan_uploads {
+    margin: 0;
+    position: absolute;
+    width: 88%;
+    height: 10px;
+    background-color: rgba(226, 226, 226, 0.342);
+    animation: scan 5s infinite;
+  }
+  @keyframes scan {
+    0% {
+      top: 15%;
+    }
+    50% {
+      top: 51%;
+    }
+    100% {
+      top: 14%;
+    }
+  }
+}

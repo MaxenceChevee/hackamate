@@ -94,8 +94,9 @@ function Uploads() {
       )}
 
       {isLoading && !analyzeResult && (
-        <section className="page_uploads">
-          <img src={image} alt="upload" />
+        <section className="page_uploads_monitor">
+          <hr className="scan_uploads" />
+          <img className="screen_uploads" src={image} alt="upload" />
           <p className="in_progress">Chargement en cours</p>
         </section>
       )}
