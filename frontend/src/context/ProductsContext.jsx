@@ -1,10 +1,11 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useMemo } from "react";
+import { useSessionStorage } from "usehooks-ts";
 import PropTypes from "prop-types";
 
 const productContext = createContext();
 
 function ProductProvider({ children }) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useSessionStorage("products", []);
   const product = useMemo(
     () => ({ products, setProducts }),
     [products, setProducts]
