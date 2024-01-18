@@ -106,14 +106,16 @@ function Uploads() {
             className="select_uploads"
             onChange={handleChange}
           />
-          <button
-            type="button"
-            className="valide_uploads"
-            onClick={() => handleValidateImg()}
-            disabled={!image}
-          >
-            Valider
-          </button>
+          {!isValidateImg && (
+            <button
+              type="button"
+              className="valide_uploads"
+              onClick={() => handleValidateImg()}
+              disabled={!image}
+            >
+              Valider
+            </button>
+          )}
         </section>
       )}
 
