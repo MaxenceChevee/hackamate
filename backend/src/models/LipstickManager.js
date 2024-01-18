@@ -6,11 +6,11 @@ class LipstickManager extends AbstractManager {
   }
 
   async create(lipstick) {
-    const { name, codeColor, nameColor, weight, aspect, price } = lipstick;
+    const { name, codeColor, nameColor, quantity, aspect, price } = lipstick;
 
     const [result] = await this.database.query(
-      `INSERT INTO ${this.table} (name, code_color, name_color, weight, aspect, price) VALUES (?, ?, ?, ?, ?, ?)`,
-      [name, codeColor, nameColor, weight, aspect, price]
+      `INSERT INTO ${this.table} (name, code_color, name_color, quantity, aspect, price) VALUES (?, ?, ?, ?, ?, ?)`,
+      [name, codeColor, nameColor, quantity, aspect, price]
     );
 
     return result.insertId;
@@ -52,7 +52,7 @@ class LipstickManager extends AbstractManager {
       "name",
       "codeColor",
       "nameColor",
-      "weight",
+      "quantity",
       "aspect",
       "price",
     ];

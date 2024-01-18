@@ -34,7 +34,7 @@ CREATE TABLE lipstick (
   name VARCHAR(100) NOT NULL,
   codeColor VARCHAR(30) NOT NULL,
   nameColor VARCHAR(30) NOT NULL,
-  weight INT NOT NULL,
+  quantity INT NOT NULL,
   aspect VARCHAR(30) NOT NULL,
   price DECIMAL(10, 2) NOT NULL,
   image_link VARCHAR(255),
