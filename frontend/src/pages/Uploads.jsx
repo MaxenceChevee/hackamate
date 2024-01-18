@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import "../styles/Uploads.scss";
@@ -12,6 +12,7 @@ function Uploads() {
   const [counter, setCounter] = useState(0);
   const { setProducts, products } = useContext(productContext);
   const [isValidateImg, setIsValidateImg] = useState(false);
+  const [isShoppingCart, setIsShoppingCart] = useState(false);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -43,6 +44,7 @@ function Uploads() {
       codeColor: selectProduct.codeColor,
     };
     setProducts([...products, arrayProduct]);
+    setIsShoppingCart(true);
   };
   const handleCounter = () => {
     setCounter(counter + 1);
@@ -51,6 +53,13 @@ function Uploads() {
   const handleValidateImg = () => {
     setIsValidateImg(!isValidateImg);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShoppingCart(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isShoppingCart]);
 
   return (
     <>
@@ -64,7 +73,7 @@ function Uploads() {
               <div className="check_uploads">
                 <div className="align_check">
                   <input type="checkbox" />
-                  <p>Avez-vous des alergies ?</p>
+                  <p>Avez-vous des allergies ?</p>
                 </div>
                 <div className="align_check">
                   <input type="checkbox" />
@@ -118,11 +127,18 @@ function Uploads() {
 
       {analyzeResult && !isLoading && (
         <section className="page_uploads_result">
+          {isShoppingCart && (
+            <img
+              className="pouce_uploads"
+              src="https://usagif.com/wp-content/uploads/thumbs-up-99.gif"
+              alt="pouce"
+            />
+          )}
           <p>produit dans le panier {counter}</p>
           {analyzeResult.map((result) => {
             return (
               <>
-                <div className="container_result" key={result.id}>
+                <div className="container_result" key={result.name}>
                   <p className="desc_result">{result.name}</p>
                   <img
                     className="img_result"
