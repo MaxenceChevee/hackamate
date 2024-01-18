@@ -76,33 +76,37 @@ function Uploads() {
           <p>produit dans le panier {counter}</p>
           {analyzeResult.map((result) => {
             return (
-              <div className="container_result" key={result.id}>
-                <p className="desc_result">{result.name}</p>
-                <img
-                  className="img_result"
-                  src={result.image_link}
-                  alt="maquillage"
-                />
-                <p className="text_color_result">{result.nameColor}</p>
-                <div
-                  className="color_result"
-                  style={{
-                    backgroundColor: result.codeColor,
-                    width: "1.5rem",
-                    height: "1.5rem",
-                  }}
-                />
-                <p className="quantity_result">{result.quantity}ml</p>
-                <button
-                  onClick={() => {
-                    handleSubmit(result);
-                    handleCounter();
-                  }}
-                  type="button"
-                >
-                  Panier
-                </button>
-              </div>
+              <>
+                <div className="container_result" key={result.id}>
+                  <p className="desc_result">{result.name}</p>
+                  <img
+                    className="img_result"
+                    src={result.image_link}
+                    alt="maquillage"
+                  />
+                  <p className="text_color_result">{result.nameColor}</p>
+                  <div
+                    className="color_result"
+                    style={{
+                      backgroundColor: result.codeColor,
+                      width: "1.5rem",
+                      height: "1.5rem",
+                    }}
+                  />
+                  <p className="quantity_result">{result.quantity}ml</p>
+                  <button
+                    onClick={() => {
+                      handleSubmit(result);
+                      handleCounter();
+                    }}
+                    className="valide_result"
+                    type="button"
+                  >
+                    Panier
+                  </button>
+                </div>
+                <hr />
+              </>
             );
           })}
         </section>

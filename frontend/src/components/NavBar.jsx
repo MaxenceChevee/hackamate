@@ -25,7 +25,6 @@ function NavBar() {
       <div className="logo-container">
         <img src={logo} alt="Your Logo" className="logo" />
       </div>
-      <h1 className="title">Hackamaté</h1>
       <button
         className={`burger-menu ${showMenu ? "open" : ""}`}
         type="button"
@@ -35,25 +34,28 @@ function NavBar() {
       </button>
       <ul className={`nav-links ${showMenu ? "show-menu" : ""}`}>
         {navbardata.map((item) => (
-          <li key={item.id}>
-            {item.linkname === "Logout" ? (
-              <button
-                type="button"
-                className="logout-button"
-                onClick={() => {
-                  logout();
-                  closeMenu();
-                  navigate("/");
-                }}
-              >
-                {item.linkname}
-              </button>
-            ) : (
-              <Link to={item.linkurl} onClick={closeMenu}>
-                {item.linkname}
-              </Link>
-            )}
-          </li>
+          <>
+            <li key={item.id}>
+              {item.linkname === "Logout" ? (
+                <button
+                  type="button"
+                  className="logout-button"
+                  onClick={() => {
+                    logout();
+                    closeMenu();
+                    navigate("/");
+                  }}
+                >
+                  {item.linkname}
+                </button>
+              ) : (
+                <Link to={item.linkurl} onClick={closeMenu}>
+                  {item.linkname}
+                </Link>
+              )}
+            </li>
+            <hr />
+          </>
         ))}
       </ul>
       <span className="bottom"> </span>
