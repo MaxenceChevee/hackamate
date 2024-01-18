@@ -29,7 +29,7 @@ function NavBar() {
   };
 
   const loggedInLinks = [
-    { id: 1, linkname: "Accueil", linkurl: "/home" },
+    { id: 1, linkname: "Accueil", linkurl: "/" },
     { id: 2, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
     { id: 3, linkname: "Paramètres", linkurl: "/settings" },
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
@@ -80,6 +80,7 @@ function NavBar() {
           </>
         ))}
       </ul>
+      <span className="bottom"> </span>
     </nav>
   );
 }

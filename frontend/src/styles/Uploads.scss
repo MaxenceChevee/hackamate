@@ -44,6 +44,21 @@
       border: 1px solid transparent;
     }
   }
+  .popup_uploads {
+    text-align: center;
+    width: 100%;
+    .check_uploads input {
+      position: absolute;
+      margin-top: 1px;
+      cursor: pointer;
+    }
+  }
+  .align_check {
+    text-align: left;
+    p {
+      margin-left: 20px;
+    }
+  }
 }
 img {
   display: block;

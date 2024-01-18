@@ -54,16 +54,24 @@ function Uploads() {
           <h1 className="title_uploads">Import</h1>
           {isValidateImg && (
             <section className="popup_uploads">
-              <h3>Decrivez votre peau</h3>
-              <div>
-                <input type="checkbox" />
-                <p>Avez-vous des alergies ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous des cicatrices ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau sèche ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau grasse ?</p>
+              <h2>Decrivez votre peau</h2>
+              <div className="check_uploads">
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des alergies ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des cicatrices ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau sèche ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau grasse ?</p>
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -71,6 +79,7 @@ function Uploads() {
                   handleValidateImg();
                 }}
                 type="button"
+                className="valide_uploads"
               >
                 Valider
               </button>
