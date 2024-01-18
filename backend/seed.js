@@ -27,43 +27,43 @@ const seed = async () => {
     queries.push(
       database.query(
         `INSERT INTO mascara (name, codeColor, nameColor, quantity, effect, price, image_link) VALUES
-      ('Brow artist mascara perfecteur sourcils etoffés', '#F3F3F3', 'Transparent', 10, 'Volumateur', 19.95, 'https://postimg.cc/f3WMhVrz'),
-      ('Age perfect mascara densifiant', '#391E17', 'Marron', 9, 'Densifieur', 12.90, 'https://postimg.cc/2VfJJVyV'),
-      ('Telescopic', '#231F20', 'Noir', 12, 'Allongement', 14.50, 'https://postimg.cc/6Td2wmWY'),
-      ('Mascara panorama volume millions de cils', '#53352D', 'Marron', 10, 'Volumateur', 12.90, 'https://postimg.cc/zLxB3sb1'),
-      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://postimg.cc/XZvbpp6s'),
-      ('Mascara bambi eye faux cils noir intense', '#000000', 'Noir', 10, 'Allongement', 14.50, 'https://postimg.cc/zHKyCTqw'),
-      ('Mascara Lash Paradise Waterproof', '#000000', 'Noir', 15, 'Volumateur', 11.50, 'https://postimg.cc/LYT1wzcH'),
-      ('Mascara Lash Paradise Noir Intense', '#000000', 'Noir', 13, 'Densifieur', 14, 'https://postimg.cc/zbjx7Hph'),
-      ('Mascara Bambi Eye Faux Cils Waterproof', '#000000', 'Noir', 15, 'Bouclage', 17, 'https://postimg.cc/YGmvw0ds'),
-      ('Volume Millions de Cils Mascara volume intense et soin', '#000000', 'Noir', 10, 'Allongemnt', 15, 'https://postimg.cc/BjvgWWK1')`
+      ('Brow artist mascara perfecteur sourcils etoffés', '#F3F3F3', 'Transparent', 10, 'Volumateur', 19.95, 'https://i.postimg.cc/HLXnX50y/Capture-decran-2024-01-17-165131.webp'),
+      ('Age perfect mascara densifiant', '#391E17', 'Marron', 9, 'Densifieur', 12.90, 'https://i.postimg.cc/dt7YhCKm/image.webp'),
+      ('Telescopic', '#231F20', 'Noir', 12, 'Allongement', 14.50, 'https://i.postimg.cc/FF6jyM25/image.webp'),
+      ('Mascara panorama volume millions de cils', '#53352D', 'Marron', 10, 'Volumateur', 12.90, 'https://i.postimg.cc/Y9HmDktj/image.webp'),
+      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://i.postimg.cc/9fdFg78H/image.webp'),
+      ('Mascara bambi eye faux cils noir intense', '#000000', 'Noir', 10, 'Allongement', 14.50, 'https://i.postimg.cc/yxr0zT5G/Capture-d-cran-2024-01-17-230530.png'),
+      ('Mascara Lash Paradise Waterproof', '#000000', 'Noir', 15, 'Volumateur', 11.50, 'https://i.postimg.cc/903Y4b1q/Capture-d-cran-2024-01-17-231033.png'),
+      ('Mascara Lash Paradise Noir Intense', '#000000', 'Noir', 13, 'Densifieur', 14, 'https://i.postimg.cc/7hvjxg2K/Capture-d-cran-2024-01-17-231305.png'),
+      ('Mascara Bambi Eye Faux Cils Waterproof', '#000000', 'Noir', 15, 'Bouclage', 17, 'https://i.postimg.cc/wvwLLsLg/Capture-d-cran-2024-01-17-231649.png'),
+      ('Volume Millions de Cils Mascara volume intense et soin', '#000000', 'Noir', 10, 'Allongemnt', 15, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png')`
       )
     );
 
     queries.push(
       database.query(
         `INSERT INTO foundation (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
-      ('Fond de teint accord parfait', '#BE815B', 'Soleil rose', 20, 'Mate', 14, 'https://postimg.cc/crK82M9c'),
-      ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://postimg.cc/FYzd3bcS'),
-      ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://postimg.cc/jW7zHP9M'),
-      ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://postimg.cc/Fd08BffZ'),
-      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 13, 'https://postimg.cc/s1MxLsKh')`
+      ('Fond de teint accord parfait', '#BE815B', 'Soleil rose', 20, 'Mate', 14, 'https://i.postimg.cc/YqRf4dQT/Capture-decran-2024-01-17-164403.webp'),
+      ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://i.postimg.cc/wjcXK0jw/Capture-decran-2024-01-17-164524.webp'),
+      ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://i.postimg.cc/zfd01kkY/Capture-decran-2024-01-17-164639.webp'),
+      ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://i.postimg.cc/rmHTzxMv/Capture-decran-2024-01-17-164737.webp'),
+      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 13, 'https://i.postimg.cc/zDjhVfg0/Capture-decran-2024-01-17-164856.webp')`
       )
     );
 
     queries.push(
       database.query(
         `INSERT INTO lipstick (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
-      ('Color riche rouge à lèvres', '#AF6B6E', 'Le nude admirable', 30, 'Matte', 16.99, 'https://postimg.cc/m11Ywnm1'),
-      ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://postimg.cc/MXQbndGM'),
-      ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://postimg.cc/8sP401KD'),
-      ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://postimg.cc/3ynxwCgk'),
-      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://postimg.cc/LJdFLHLk'),
-      ('L&#39;Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://postimg.cc/BjvgWWK1'),
-      ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://postimg.cc/xcWbjWkZ'),
-      ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://postimg.cc/xcWbjWkZ'),
-      ('Color riche rouge à lèvres mat', '#C74D5C', 'Frappez une rose', 25, 'Mate', 16.99, 'https://postimg.cc/7fzT2yWS'),
-      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L&#39;autonomie', 20, 'Brillant', 17, 'https://postimg.cc/4m3wpnTj')`
+      ('Color riche rouge à lèvres', '#AF6B6E', 'Le nude admirable', 30, 'Matte', 16.99, 'https://i.postimg.cc/MHd9W2R5/image.webp'),
+      ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://i.postimg.cc/NGNNPnq4/image.webp'),
+      ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://i.postimg.cc/sf5L1x5B/image.webp'),
+      ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://i.postimg.cc/vBdg30Tt/image.webp'),
+      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://i.postimg.cc/fRyW4ybP/image.webp'),
+      ('L&#39;Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png'),
+      ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
+      ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
+      ('Color riche rouge à lèvres mat', '#C74D5C', 'Frappez une rose', 25, 'Mate', 16.99, 'https://i.postimg.cc/Qx4gv8gY/Capture-d-cran-2024-01-17-234315.png'),
+      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L&#39;autonomie', 20, 'Brillant', 17, 'https://i.postimg.cc/hPLwW7Z4/Capture-d-cran-2024-01-17-235122.pngs')`
       )
     );
 
