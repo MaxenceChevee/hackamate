@@ -70,6 +70,8 @@ nav {
       color: black;
       font-weight: bold;
       font-size: 1.2rem;
+      padding: 12px;
+      border: none;
 
       &:hover {
         color: $color4;
@@ -77,9 +79,6 @@ nav {
     }
 
     .logout-button {
-      padding: 12px;
-      background-color: $color4;
-      color: rgb(214, 34, 34);
       cursor: pointer;
       font-size: 18px;
       border: none;

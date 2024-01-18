@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import NavBarData from "../datas/NavBarData.json";
-import NavBarDataConnected from "../datas/NavBarDataConnected.json";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Navbar.scss";
 import logo from "../assets/images/logo.png";
@@ -9,8 +7,8 @@ import logo from "../assets/images/logo.png";
 function NavBar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
-  const [showMenu, setShowMenu] = React.useState(false);
-  const navbardata = user ? NavBarDataConnected : NavBarData;
+
+  const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,6 +17,34 @@ function NavBar() {
   const closeMenu = () => {
     setShowMenu(false);
   };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/");
+      closeMenu();
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+
+  const loggedInLinks = [
+    { id: 1, linkname: "Accueil", linkurl: "/home" },
+    { id: 2, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
+    { id: 3, linkname: "Paramètres", linkurl: "/settings" },
+    { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
+    { id: 5, linkname: "Panier", linkurl: "/shopping-cart" },
+  ];
+
+  const loggedOutLinks = [
+    { id: 1, linkname: "Accueil", linkurl: "/" },
+    { id: 2, linkname: "Se connecter", linkurl: "/login" },
+    { id: 3, linkname: "Inscription", linkurl: "/register" },
+    { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
+    { id: 5, linkname: "Panier", linkurl: "/shopping-cart" },
+  ];
+
+  const navbardata = user ? loggedInLinks : loggedOutLinks;
 
   return (
     <nav>
@@ -36,15 +62,11 @@ function NavBar() {
       <ul className={`nav-links ${showMenu ? "show-menu" : ""}`}>
         {navbardata.map((item) => (
           <li key={item.id}>
-            {item.linkname === "Logout" ? (
+            {item.action ? (
               <button
                 type="button"
                 className="logout-button"
-                onClick={() => {
-                  logout();
-                  closeMenu();
-                  navigate("/");
-                }}
+                onClick={item.action}
               >
                 {item.linkname}
               </button>
@@ -56,7 +78,6 @@ function NavBar() {
           </li>
         ))}
       </ul>
-      <span className="bottom"> </span>
     </nav>
   );
 }
