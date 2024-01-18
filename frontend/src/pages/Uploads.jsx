@@ -60,7 +60,7 @@ function Uploads() {
           <h1 className="title_uploads">Import</h1>
           {isValidateImg && (
             <section className="popup_uploads">
-              <h2>Decrivez votre peau</h2>
+              <h3>Decrivez votre peau</h3>
               <div className="check_uploads">
                 <div className="align_check">
                   <input type="checkbox" />
@@ -85,7 +85,7 @@ function Uploads() {
                   handleValidateImg();
                 }}
                 type="button"
-                className="valide_uploads"
+                className="valide_popup_uploads"
               >
                 Valider
               </button>
