@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
@@ -11,18 +12,31 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // eslint-disable-next-line no-restricted-syntax
-    console.log("Message sent:", { email, firstName, lastName, message });
+    const userId = `${import.meta.env.VITE_EMAILJS_USER_ID}`;
+    const templateId = `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`;
+    const serviceId = `${import.meta.env.VITE_EMAILJS_SERVICE_ID}`;
+
+    const templateParams = {
+      email,
+      firstName,
+      lastName,
+      message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, userId)
+      .then((response) => {
+        console.info("Email sent successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+      });
   };
 
   return (
     <section className="contact">
       <NavBar />
-      <form
-        onSubmit={handleSubmit}
-        action="mailto:nelson.64@live.fr"
-        method="post"
-      >
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="firstName">First Name:</label>
           <input
