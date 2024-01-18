@@ -47,7 +47,7 @@ const seed = async () => {
       ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://i.postimg.cc/wjcXK0jw/Capture-decran-2024-01-17-164524.webp'),
       ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://i.postimg.cc/zfd01kkY/Capture-decran-2024-01-17-164639.webp'),
       ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://i.postimg.cc/rmHTzxMv/Capture-decran-2024-01-17-164737.webp'),
-      ('Fond de teint en poudre infaillible 24h', "#795746", 'Ebéne', 18, 'Satin', 13, 'https://i.postimg.cc/zDjhVfg0/Capture-decran-2024-01-17-164856.webp')`
+      ('Fond de teint en poudre infaillible 24h', '#795746', 'Ebéne', 18, 'Satin', 13, 'https://i.postimg.cc/zDjhVfg0/Capture-decran-2024-01-17-164856.webp')`
       )
     );
 
@@ -59,7 +59,7 @@ const seed = async () => {
       ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://i.postimg.cc/sf5L1x5B/image.webp'),
       ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://i.postimg.cc/vBdg30Tt/image.webp'),
       ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://i.postimg.cc/fRyW4ybP/image.webp'),
-      ('L&#39;Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png'),
+      ('L’Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png'),
       ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
       ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
       ('Color riche rouge à lèvres mat', '#C74D5C', 'Frappez une rose', 25, 'Mate', 16.99, 'https://i.postimg.cc/Qx4gv8gY/Capture-d-cran-2024-01-17-234315.png'),
