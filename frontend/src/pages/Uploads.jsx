@@ -11,6 +11,7 @@ function Uploads() {
   const [isLoading, setIsLoading] = useState(false);
   const [counter, setCounter] = useState(0);
   const { setProducts, products } = useContext(productContext);
+  const [isValidateImg, setIsValidateImg] = useState(false);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -41,12 +42,40 @@ function Uploads() {
     setCounter(counter + 1);
   };
 
+  const handleValidateImg = () => {
+    setIsValidateImg(!isValidateImg);
+  };
+
   return (
     <>
       <NavBar />
       {!analyzeResult && !isLoading && (
         <section className="page_uploads">
           <h1 className="title_uploads">Import</h1>
+          {isValidateImg && (
+            <section className="popup_uploads">
+              <h3>Decrivez votre peau</h3>
+              <div>
+                <input type="checkbox" />
+                <p>Avez-vous des alergies ?</p>
+                <input type="checkbox" />
+                <p>Avez-vous des cicatrices ?</p>
+                <input type="checkbox" />
+                <p>Avez-vous la peau sèche ?</p>
+                <input type="checkbox" />
+                <p>Avez-vous la peau grasse ?</p>
+              </div>
+              <button
+                onClick={() => {
+                  handleAnalyzer();
+                  handleValidateImg();
+                }}
+                type="button"
+              >
+                Valider
+              </button>
+            </section>
+          )}
           {image && <img src={image} alt="upload" />}
           <input
             type="file"
@@ -56,7 +85,7 @@ function Uploads() {
           <button
             type="button"
             className="valide_uploads"
-            onClick={() => handleAnalyzer()}
+            onClick={() => handleValidateImg()}
             disabled={!image}
           >
             Valider
