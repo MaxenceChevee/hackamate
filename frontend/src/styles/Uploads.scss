@@ -3,6 +3,7 @@
 .page_uploads {
   margin: 1rem;
   text-align: center;
+  min-height: 74vh;
   img {
     display: block;
     margin: 1rem auto;
@@ -68,6 +69,7 @@ img {
 .page_uploads_result {
   margin: 1rem;
   text-align: center;
+  min-height: 74vh;
   .desc_result {
     color: white;
   }

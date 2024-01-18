@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Popup from "../components/Popup";
 import { useAuth } from "../context/AuthContext";
+import Footer from "../components/Footer";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -67,6 +68,7 @@ function ForgotPassword() {
           </Popup>
         )}
       </div>
+      <Footer />
     </>
   );
 }

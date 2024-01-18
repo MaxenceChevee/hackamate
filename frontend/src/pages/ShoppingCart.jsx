@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 // import axios from "axios";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import "../styles/ShoppingCart.scss";
 
 function ShoppingCart() {
   const { userId } = useParams();
@@ -43,8 +45,8 @@ function ShoppingCart() {
   return (
     <>
       <NavBar />
-      <div>
-        <h2>Shopping Cart</h2>
+      <div className="container_shop">
+        <h1 className="title_shop">Shopping Cart</h1>
         {cart && (
           <div>
             <p>Cart ID: {cart.id}</p>
@@ -78,6 +80,7 @@ function ShoppingCart() {
           </div>
         )}
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,14 +1,12 @@
 @import "./variables.scss";
 
-.HomeComponent {
+.container_shop {
   margin: 1rem;
+  text-align: center;
   min-height: 74vh;
-  .title_home {
+  .title_shop {
     color: white;
     font-size: 28px;
-  }
-  .desc_home {
-    color: white;
-    line-height: 1.5rem;
+    text-align: left;
   }
 }
