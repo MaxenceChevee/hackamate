@@ -162,4 +162,35 @@ nav {
       opacity: 1;
     }
   }
+  .bottom {
+    position: absolute;
+    border-radius: 100%;
+    right: 0;
+    top: 66px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgb(194, 41, 41),
+      rgba(194, 41, 41, 0.5),
+      transparent 80%
+    );
+    animation: navBottom 5s ease-in-out infinite;
+  }
+}
+@keyframes navBottom {
+  0%,
+  50% {
+    opacity: 1;
+    width: 0;
+  }
+
+  75% {
+    opacity: 1;
+    width: 200%;
+  }
+
+  76%,
+  100% {
+    opacity: 1;
+  }
 }

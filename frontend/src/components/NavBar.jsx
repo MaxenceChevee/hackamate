@@ -56,6 +56,7 @@ function NavBar() {
           </li>
         ))}
       </ul>
+      <span className="bottom"> </span>
     </nav>
   );
 }
