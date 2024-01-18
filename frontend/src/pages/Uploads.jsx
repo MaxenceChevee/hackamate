@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import "../styles/Uploads.scss";
+import { productContext } from "../context/ProductsContext";
 
 function Uploads() {
   const [image, setImage] = useState(null);
   const [analyzeResult, setAnalyzeResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const { setProducts, setIdProducts } = useContext(productContext);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -27,6 +29,12 @@ function Uploads() {
     e.preventDefault();
     setImage(URL.createObjectURL(e.target.files[0]));
   };
+
+  const handleSubmit = (selectProduct) => {
+    setIdProducts(selectProduct.id);
+    setProducts(selectProduct.name);
+  };
+
   return (
     <>
       <NavBar />
@@ -61,7 +69,7 @@ function Uploads() {
         <section className="page_uploads_result">
           {analyzeResult.map((result) => {
             return (
-              <div className="container_result">
+              <div className="container_result" key={result.id}>
                 <p className="desc_result">{result.name}</p>
                 <img
                   className="img_result"
@@ -78,6 +86,9 @@ function Uploads() {
                   }}
                 />
                 <p className="quantity_result">{result.quantity}ml</p>
+                <button onClick={() => handleSubmit(result)} type="button">
+                  Panier
+                </button>
               </div>
             );
           })}

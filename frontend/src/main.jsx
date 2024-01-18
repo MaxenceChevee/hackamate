@@ -7,14 +7,9 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import { ProductProvider } from "./context/ProductsContext";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import App from "./App";
-// import Dashboard from "./pages/admin/Dashboard";
-// import Content from "./pages/admin/Content";
-// import Category from "./pages/admin/Category";
-// import Users from "./pages/admin/Users";
-// import Videos from "./pages/Videos";
-// import Playlists from "./pages/Playlists";
 import LogIn from "./pages/Login";
 import Register from "./pages/Signup";
 import Settings from "./pages/Settings";
@@ -59,27 +54,6 @@ function Main() {
   return (
     <>
       <Routes>
-        {/* <Route
-          path="/admin/*"
-          element={<PrivateRoute element={<Dashboard />} requiresAuth />}
-        />
-        <Route
-          path="/content/*"
-          element={<PrivateRoute element={<Content />} requiresAuth />}
-        />
-        <Route
-          path="/category/*"
-          element={<PrivateRoute element={<Category />} requiresAuth />}
-        />
-        <Route
-          path="/users/*"
-          element={<PrivateRoute element={<Users />} requiresAuth />}
-        />
-        <Route path="/videos" element={<Videos />} />
-        <Route
-          path="/playlists"
-          element={<PrivateRoute element={<Playlists />} requiresAuth />}
-        /> */}
         <Route path="/" element={<Home />} />
         <Route path="/shopping-cart/:userId" element={<ShoppingCart />} />
         <Route path="/analyzer/uploads" element={<Uploads />} />
@@ -119,9 +93,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <AuthProvider>
-        <Main />
-      </AuthProvider>
+      <ProductProvider>
+        <AuthProvider>
+          <Main />
+        </AuthProvider>
+      </ProductProvider>
     </Router>
   </React.StrictMode>
 );
