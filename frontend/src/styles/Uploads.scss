@@ -9,20 +9,20 @@
     margin: 1rem auto;
     max-height: 320px;
     max-width: 80%;
-    border: 1px solid white;
+    border: 1px solid black;
   }
   .title_uploads {
-    color: white;
+    color: black;
     font-size: 28px;
     text-align: left;
   }
   .select_uploads {
-    color: white;
+    color: black;
     margin: 1rem;
   }
   .valide_uploads {
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     border: 2px solid transparent;
     padding: 1.125rem 0.75rem;
     margin: 1rem;
@@ -71,7 +71,7 @@ img {
   text-align: center;
   min-height: 74vh;
   .desc_result {
-    color: white;
+    color: black;
   }
   .img_result {
     height: 8rem;
@@ -79,7 +79,7 @@ img {
   }
   .text_color_result {
     display: inline-block;
-    color: white;
+    color: black;
   }
   .color_result {
     display: inline-block;
@@ -90,6 +90,19 @@ img {
   .quantity_result {
     display: inline-block;
     margin-left: 1rem;
+    color: black;
+  }
+  .valide_result {
+    margin-left: 1rem;
     color: white;
+    background-color: black;
+    border: 1px solid transparent;
+  }
+  hr {
+    width: 100px;
+    color: black;
+    &:last-child {
+      display: none;
+    }
   }
 }
