@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import { ProductProvider } from "./context/ProductsContext";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+// import { CommentProvider } from "./context/CommentContext";
 import App from "./App";
 import LogIn from "./pages/Login";
 import Register from "./pages/Signup";
@@ -18,6 +19,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Popup from "./components/Popup";
 import ShoppingCart from "./pages/ShoppingCart";
 import Uploads from "./pages/Uploads";
+import Scan from "./pages/scan";
 import Home from "./pages/Home";
 
 function PrivateRoute({ element, requiresAuth, ...props }) {
@@ -57,6 +59,7 @@ function Main() {
         <Route path="/" element={<Home />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
         <Route path="/analyzer/uploads" element={<Uploads />} />
+        <Route path="/analyzer/scan" element={<Scan />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
         <Route
           path="/register"
@@ -93,11 +96,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-      <ProductProvider>
-        <AuthProvider>
+      <AuthProvider>
+        <ProductProvider>
+          {/* <CommentProvider> */}
           <Main />
-        </AuthProvider>
-      </ProductProvider>
+          {/* </CommentProvider> */}
+        </ProductProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>
 );

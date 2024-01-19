@@ -27,6 +27,27 @@ nav {
     height: auto;
     border: none;
   }
+  .cart-icon-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cart-icon {
+    display: block;
+    width: 2.5rem;
+  }
+
+  .cart-counter {
+    position: absolute;
+    top: 50%;
+    right: 42%;
+    transform: translate(50%, -50%);
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 4px;
+    font-size: 10px;
+  }
 
   .title {
     text-align: center;

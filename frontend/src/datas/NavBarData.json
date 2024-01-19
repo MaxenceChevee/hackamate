@@ -25,6 +25,12 @@
 
   {
     "id": 5,
+    "linkname": "Scan",
+    "linkurl": "/analyzer/scan"
+  },
+
+  {
+    "id": 6,
     "linkname": "Panier",
     "linkurl": "/shopping-cart"
   }

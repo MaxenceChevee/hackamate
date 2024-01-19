@@ -23,6 +23,11 @@
   },
   {
     "id": 5,
+    "linkname": "Scan",
+    "linkurl": "/analyzer/scan"
+  },
+  {
+    "id": 6,
     "linkname": "Se déconnecter",
     "linkurl": "/",
     "action": "logout"

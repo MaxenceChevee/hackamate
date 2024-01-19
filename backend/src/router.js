@@ -7,6 +7,7 @@ const shoppingCartController = require("./controllers/shoppingCartController");
 const mascaraController = require("./controllers/mascaraController");
 const foundationController = require("./controllers/foundationController");
 const lipstickController = require("./controllers/lipstickController");
+const commentController = require("./controllers/commentController");
 const verifyToken = require("./middlewares/verifyToken");
 
 router.get("/users", verifyToken, userControllers.browse);
@@ -48,5 +49,8 @@ router.get("/lipstick", lipstickController.readAll);
 router.post("/lipstick", lipstickController.add);
 router.put("/lipstick/:id", lipstickController.edit);
 router.delete("/lipstick/:id", lipstickController.destroy);
+
+// router.post("/comments", verifyToken, commentController.addComment);
+// router.get("/comments/:productType/:productId", commentController.getComments);
 
 module.exports = router;

@@ -6,6 +6,19 @@ const seed = async () => {
   try {
     const queries = [];
 
+    // queries.push(
+    //   database.query(
+    //     `INSERT INTO comments (user_id, product_id, product_type, comment_text) VALUES
+    //     (1, 1, 'mascara', 'C’est un excellent mascara!'),
+    //     (2, 1, 'mascara', 'Je n’ai pas aimé la texture.'),
+    //     (1, 2, 'mascara', 'Parfait pour un look quotidien.'),
+    //     (2, 3, 'foundation', 'Ce fond de teint est incroyable!'),
+    //     (1, 4, 'foundation', 'Il s’adapte parfaitement à ma peau.'),
+    //     (2, 5, 'lipstick', 'La couleur de ce rouge à lèvres est magnifique!'),
+    //     (1, 6, 'lipstick', 'Je ne m’attendais pas à aimer autant ce rouge à lèvres.')`
+    //   )
+    // );
+
     queries.push(
       database.query(
         `INSERT INTO users (firstname, lastname, pseudoname, mail, birthdate, logdate, password) VALUES

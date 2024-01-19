@@ -1,17 +1,22 @@
 import { useContext, useState } from "react";
 import axios from "axios";
+// import { CommentProvider, useCommentContext } from "../context/CommentContext";
+// import Comment from "../components/Comment";
+// import CommentForm from "../components/CommentForm";
 import NavBar from "../components/NavBar";
 import "../styles/Uploads.scss";
 import { productContext } from "../context/ProductsContext";
 import Footer from "../components/Footer";
 
 function Uploads() {
+  // const { comments } = useCommentContext();
   const [image, setImage] = useState(null);
   const [analyzeResult, setAnalyzeResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [counter, setCounter] = useState(0);
   const { setProducts, products } = useContext(productContext);
   const [isValidateImg, setIsValidateImg] = useState(false);
+  // const [showComments, setShowComments] = useState(false);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -19,8 +24,6 @@ function Uploads() {
       axios
         .get(`${import.meta.env.VITE_BACKEND_URL}/api/suggestions/random`)
         .then((response) => {
-          // eslint-disable-next-line no-restricted-syntax
-          console.log(response.data.suggestions);
           setAnalyzeResult(response.data.suggestions);
           setIsLoading(false);
         })
@@ -44,6 +47,7 @@ function Uploads() {
     };
     setProducts([...products, arrayProduct]);
   };
+
   const handleCounter = () => {
     setCounter(counter + 1);
   };
@@ -53,6 +57,7 @@ function Uploads() {
   };
 
   return (
+    // <CommentProvider>
     <>
       <NavBar />
       {!analyzeResult && !isLoading && (
@@ -63,7 +68,7 @@ function Uploads() {
               <h3>Decrivez votre peau</h3>
               <div>
                 <input type="checkbox" />
-                <p>Avez-vous des alergies ?</p>
+                <p>Avez-vous des allergies ?</p>
                 <input type="checkbox" />
                 <p>Avez-vous des cicatrices ?</p>
                 <input type="checkbox" />
@@ -129,6 +134,26 @@ function Uploads() {
                       height: "1.5rem",
                     }}
                   />
+                  {/* <button
+                      type="button"
+                      onClick={() => setShowComments(!showComments)}
+                    >
+                      {showComments
+                        ? "Cacher les commentaires"
+                        : "Voir les commentaires"}
+                    </button>
+                    {showComments && (
+                      <div className="comments-section">
+                        {comments.length > 0 ? (
+                          comments.map((comment) => (
+                            <Comment key={comment.id} comment={comment} />
+                          ))
+                        ) : (
+                          <p>Il n'y a aucun commentaire.</p>
+                        )}
+                        <CommentForm productId={result.id} />
+                      </div>
+                    )} */}
                   <p className="quantity_result">{result.quantity}ml</p>
                   <button
                     onClick={() => {
@@ -149,6 +174,7 @@ function Uploads() {
       )}
       <Footer />
     </>
+    // </CommentProvider>
   );
 }
 
