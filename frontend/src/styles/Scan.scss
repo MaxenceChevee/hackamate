@@ -1,0 +1,217 @@
+/* eslint-disable */
+/* prettier-ignore */
+.scanLayout {
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+  box-sizing: content-box;
+}
+
+.scanTitle {
+  max-width: 500px;
+  font-size: 30px;
+  letter-spacing: -1.5px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  word-spacing: 2.5px;
+}
+
+.scanText {
+  max-width: 500px;
+  font-size: 15px;
+  letter-spacing: -1px;
+  color: black;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 0;
+}
+
+.scanButton {
+  width: fit-content;
+  padding: 20px 40px;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: -1px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s;
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgb(32, 31, 31);
+  }
+}
+
+.scanContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.webcamContainer {
+  max-width: 400px;
+  position: relative;
+}
+
+.visage {
+  position: absolute;
+  height: 80%;
+  width: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../assets/images/visage.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.webcam {
+  border-radius: 20px;
+  margin: 10px 0 30px 0;
+}
+
+.dotsLoading {
+  width: 9.6px;
+  height: 9.6px;
+  background: #ffffff;
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow:
+    16px 0,
+    -16px 0;
+  animation: dots-u8fzftsm 1s infinite linear alternate;
+}
+
+.questionsContainer {
+  margin: 20px 0;
+}
+
+.scanQuestion {
+  border: 2px solid black;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  letter-spacing: -1px;
+  color: black;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.1s;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.checkIcon {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  min-width: 20px;
+  margin-right: 20px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemCheked {
+  height: 70%;
+  width: 70%;
+
+  border-radius: 50%;
+  background-color: black;
+}
+
+.resultContainer {
+  margin: 50px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultImage {
+  height: 150px;
+}
+
+.resultName {
+  font-size: 25px;
+  letter-spacing: -1px;
+  color: black;
+  font-weight: 800;
+  line-height: 40px;
+  word-spacing: 0px;
+}
+
+.resultFlexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 30px 0;
+  width: 100%;
+}
+
+.resultColor {
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.resultQuantity {
+  font-size: 17px;
+  letter-spacing: -1px;
+  color: black;
+  font-weight: 800;
+  line-height: 40px;
+  word-spacing: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.resultPrice {
+  font-size: 15px;
+  letter-spacing: -1px;
+  color: black;
+  font-weight: 600;
+  line-height: 40px;
+  word-spacing: 0px;
+}
+
+@keyframes dots-u8fzftsm {
+  0% {
+    box-shadow:
+      16px 0,
+      -16px 0;
+    background: none;
+  }
+
+  33% {
+    box-shadow:
+      16px 0,
+      -16px 0 rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.13);
+  }
+
+  66% {
+    box-shadow:
+      16px 0 rgba(255, 255, 255, 0.13),
+      -16px 0;
+    background: rgba(255, 255, 255, 0.13);
+  }
+}
+/* eslint-enable */

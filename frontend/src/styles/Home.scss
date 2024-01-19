@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.page_home {
+  margin: 1rem;
+  text-align: center;
+  min-height: 74vh;
+
+  .desc_home {
+    color: black;
+    width: 100%;
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    background-color: rgb(214, 159, 159);
+    .h1_home {
+      color: black;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  img {
+    display: block;
+    margin: 1rem auto;
+    max-height: 320px;
+    max-width: 80%;
+  }
+  .valide_uploads {
+    color: white;
+    background-color: black;
+    border: 2px solid transparent;
+    padding: 1.125rem 0.75rem;
+    margin: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 10.625rem;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    transition: 0.8s;
+    border-radius: 15px;
+  }
+}

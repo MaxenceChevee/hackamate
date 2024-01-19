@@ -15,7 +15,7 @@ function Popup({ children, onClose, onConfirm }) {
       <div className="popup">
         {children}
         <button type="button" onClick={handleClose}>
-          Close
+          Fermer
         </button>
       </div>
     </div>

@@ -9,16 +9,18 @@
   flex-direction: column;
   max-width: 400px;
   box-sizing: border-box;
-  margin: auto !important;
+  margin: 1rem;
 
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  .title_setting {
+    color: black;
+    font-size: 28px;
+    text-align: left;
   }
 
   .settings-list-container {
     display: flex;
     flex-direction: column;
+    color: black;
 
     label {
       margin-bottom: 10px;
@@ -35,7 +37,7 @@
     button {
       padding: 12px;
       background-color: $color4;
-      color: white;
+      color: black;
       cursor: pointer;
       font-size: 18px;
       border: none;
@@ -49,7 +51,7 @@
     }
 
     .delete-button {
-      background-color: red;
+      background-color: rgb(185, 20, 20);
       margin-top: 10px;
     }
   }

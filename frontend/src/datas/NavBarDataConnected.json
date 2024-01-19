@@ -1,19 +1,40 @@
 [
   {
     "id": 1,
-    "linkname": "Home",
+    "linkname": "Accueil",
     "linkurl": "/"
   },
 
   {
     "id": 2,
-    "linkname": "Logout",
-    "linkurl": "/",
-    "action": "logout"
+    "linkname": "Panier",
+    "linkurl": "/shopping-cart"
   },
   {
     "id": 3,
-    "linkname": "Settings",
+    "linkname": "Paramètres",
     "linkurl": "/settings"
+  },
+
+  {
+    "id": 4,
+    "linkname": "Importer",
+    "linkurl": "/analyzer/uploads"
+  },
+  {
+    "id": 5,
+<<<<<<< HEAD
+    "linkname": "Scan",
+    "linkurl": "/analyzer/scan"
+=======
+    "linkname": "Contact",
+    "linkurl": "/contact"
+>>>>>>> afdc5b42906fac50d69efc6a43a72c62cfcdb452
+  },
+  {
+    "id": 6,
+    "linkname": "Se déconnecter",
+    "linkurl": "/",
+    "action": "logout"
   }
 ]

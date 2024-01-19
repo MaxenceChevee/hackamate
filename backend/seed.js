@@ -1,66 +1,24 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
-
-// Load environment variables from .env file
 require("dotenv").config();
 
-// Import database client
 const database = require("./database/client");
 
 const seed = async () => {
   try {
-    // Declare an array to store the query promises
-    // See why here: https://eslint.org/docs/latest/rules/no-await-in-loop
     const queries = [];
 
-    /* ************************************************************************* */
-
-    // Generating CATEGORIES columns
     // queries.push(
     //   database.query(
-    //     `INSERT INTO categories (name) VALUES
-    //   ('mer'),
-    //   ('animaux'),
-    //   ('légendes'),
-    //   ('climat'),
-    //   ('géographie')`
-    //   )
-    // );
-    // await Promise.all(queries);
-
-
-    // Generating VIDEOS columns
-    // queries.push(
-    //   database.query(
-    //     `INSERT INTO videos (link, title, description, categories_id, is_free) VALUES
-    //   ("https://www.youtube.com/watch?v=iXuTu2U9l9o", "Les requins sont-ils des sérial killers ? (Vous allez être surpris)", "Les requins sont-ils des sérial killers ou des victimes de leur réputation ? Aujourd’hui, Jamy rétablit la vérité sur ces prédateurs.", 1, false),
-    //   ("https://www.youtube.com/watch?v=9MGGAZyq1Mw", "🌊 Pourquoi la mer est-elle salée ?", "🏖️ Qui va à la plage cet été ? Après avoir vu cette vidéo, si l’un de vos proches boit la tasse... vous saurez lui expliquer pourquoi la mer est salée ! Et pourquoi elle n’a pas le même goût partout 🤓", 1, false),
-    //   ("https://www.youtube.com/watch?v=fvrZrJhYGpA", "Pourquoi le niveau de la mer monte ?", "Pourquoi parle-t-on de la montée des eaux ? La fonte de la banquise est-elle vraiment liée ? Quelles parties de la France seront touchées d’ici 2050 ?", 1, false),
-    //   ("https://www.youtube.com/watch?v=b40htkjiAoI", "Comment se forment les marées ? 🌊", "Envie de connaître les marées « sur le bout du Gois » ? C’est pas la mer à boire ! Allez venez : direction la Vendée... sur l’île de Noirmoutier pour comprendre Comment se forment les marées ? 🌊", 1, false),
-    //   ("https://www.youtube.com/watch?v=E1S1_Wqqkhk", "Triangle des Bermudes : mystère et disparition", "Le triangle des Bermudes : mythe ou réalité ? Jamy vous embarque pour un voyage aux frontières du paranormal et de la science : nous allons tenter de résoudre ce mystère !", 1, false),
-    //   ("https://www.youtube.com/watch?v=LBb3HWtEL64", "Les animaux les plus DANGEREUX du monde", "Prenez votre courage à deux mains, nous partons à l’aventure en terre hostile ! Nous vous présentons notre #TOP5 des animaux les plus dangereux de la monde !", 2, false),
-    //   ("https://www.youtube.com/watch?v=bPT3rFalapc", "5 animaux quasi immortels | TOP 5", "Résistance jusqu’à -273°C, longévité accrue, régénération... Les animaux quasi immortels, ça existe ? Eh oui ! Voici un #TOP5 des animaux qui résistent à tout ! On vous présente le tardigrade, le ratel, la méduse ou Turritopsis Nutricula, la praire d’Islande, la planaire.", 2, false),
-    //   ("https://www.youtube.com/watch?v=NeBKbJ-4TOA", "5 animaux avec des SUPER-POUVOIRS 🦸 | TOP 5", "Un poisson cracheur de feu ? 🔥🐟 Une pieuvre caméléon ? 🐙 Un lézard qui marche sur l’eau ? 🦎 Les animaux avec des super-pouvoirs, ça existe ? Eh oui ! Voici mon #TOP5 des animaux avec des super-pouvoirs.", 2, false),
-    //   ("https://www.youtube.com/watch?v=71isRf1N2wo", "Le moustique est-il utile ?", "Exterminer les moustiques et plus largement les insectes, bonne idée ? Il est temps de changer notre regard sur les insectes ! Aujourd’hui dans #chezjamy on s’attaque aux rôles clés des insectes dans l’équilibre de notre biodiversité !", 2, false),
-    //   ("https://www.youtube.com/watch?v=Pript1xTdl0", " 7 réponses sur les animaux • FAQ #DisJamy", "Vous m’avez posé de nombreuses questions sur les animaux 🐴  Comme je suis à cheval sur le lien qui nous unit... je les ai réunies ici 🤓", 2, false),
-    //   ("https://www.youtube.com/watch?v=uS_FdlQTzDY", "3 MONSTRES DE LÉGENDE : mythes ou histoires vraies ?", "Le monstre du Loch Ness, le Yéti ou encore le Kraken... Des créatures devenues populaires grâce aux mystères qui les entourent. Découvrons ensemble la vérité qui se cache derrière ses mythes 🔎😉", 3, false),
-    //   ("https://www.youtube.com/watch?v=HqsP6U9FouY", "Comment estimer l’âge des DINOSAURES ? 🦕", "🦴 OSerez-vous me suivre parmi ces dinosaures dans #ChezJamy ? J’ai eu la chance de rentrer au Muséum national d’Histoire naturelle 🤓 Voici donc comment estimer l’âge des dinosaures.", 3, false),
-    //   ("https://www.youtube.com/watch?v=Q9yIutVqMwk", "Île de Pâques : le mystère des statues géantes enfin résolu ?", "Comment sont-elles arrivées là ? Qui les a taillées ? Comment ont-elles été transportées ? Aujourd’hui Jamy perce le mystère ! ", 3, false),
-    //   ("https://www.youtube.com/watch?v=JF0C_2Mxk7k", "Les gaulois ressemblaient-ils à Astérix et Obélix ?", "Étaient-ils aussi indisciplinés qu’on le prétend, analphabètes et bagarreurs? ", 3, false),
-    //   ("https://www.youtube.com/watch?v=ux2JuPglPhU", "🥇 La drôle d’histoire des JO (Jeux Olympiques)", "🥇 De l’Antiquité à Tokyo, en passant par Paris ou encore Chamonix, je vous raconte l’histoire « or » du commun des J.O. Vous êtes prêts ? Dans les starting blocks ? C’est parti 🏃🤓", 3, false),
-    //   ("https://www.youtube.com/watch?v=OBCH6rfPvnA", "5 choses à savoir sur les tornades, les typhons, les tempêtes et les cyclones ?", "Savez-vous comment les tempêtes se forment ? Pourquoi ont-elles des prénoms ?", 4, false),
-    //   ("https://www.youtube.com/watch?v=n7-9hIcxm6s", "5 Catastrophes naturelles qui pourraient vraiment nous arriver", "Dignes de certains films catastrophes, voici un #top5 des catastrophes naturelles qui pourraient vraiment se produire : éruptions solaires, supervolcans, mégatsunami 🌊🌊🌊... 🤓", 4, false),
-    //   ("https://www.youtube.com/watch?v=SnhpVGLErEQ", "C’est pas sorcier -INONDATIONS : sorciers prennent l’eau", "En France, environ deux millions de personnes sont exposées à un risque d’inondation.", 4, false),
-    //   ("https://www.youtube.com/watch?v=YEmPmCEqEqE", "ORAGES : Les sorciers ont le coup de foudre", "Chaque année en France, les orages font  d’importants dégâts et environ une dizaine de personnes sont victimes de la foudre.", 4, false),
-    //   ("https://www.youtube.com/watch?v=4ZN_6cKyO-Q", "La mer attaque la terre", "Les communes du littoral français sont de plus en plus menacées par l’érosion marine.", 4, false),
-    //   ("https://www.youtube.com/watch?v=e1i4KGI5Ag0", "La Camargue", "Fred, Jamy et Sabine sont partis à la découverte de la Camargue.", 5, false),
-    //   ("https://www.youtube.com/watch?v=Sg4zYbaFYwE", "L’ascension du Mont-Blanc", "Fred et Jamy prennent la direction de Chamonix pour faire l’ascension du Mont-Blanc.", 5, false),
-    //   ("https://www.youtube.com/watch?v=8PMYjn838FA", "La Réunion; dans les entrailles du volcan", "Comment l’île de la Réunion est-elle sortie de l’Océan Indien il y a 3 millions d’années ?", 5, false),
-    //   ("https://www.youtube.com/watch?v=7VYel9qtZ1w", "Le mystère des grottes de l’Ardèche", "Les grottes sont intimement liées à l’histoire de nos rivières", 5, false),
-    //   ("https://www.youtube.com/watch?v=HmGe2B8YQj0", "L’Islande : une île qui souffle le chaud et le froid", "L’Islande se situe à quelques encablures du cercle polaire. Reykjavik est la capitale la plus au nord de la planète.", 5, false)`
+    //     `INSERT INTO comments (user_id, product_id, product_type, comment_text) VALUES
+    //     (1, 1, 'mascara', 'C’est un excellent mascara!'),
+    //     (2, 1, 'mascara', 'Je n’ai pas aimé la texture.'),
+    //     (1, 2, 'mascara', 'Parfait pour un look quotidien.'),
+    //     (2, 3, 'foundation', 'Ce fond de teint est incroyable!'),
+    //     (1, 4, 'foundation', 'Il s’adapte parfaitement à ma peau.'),
+    //     (2, 5, 'lipstick', 'La couleur de ce rouge à lèvres est magnifique!'),
+    //     (1, 6, 'lipstick', 'Je ne m’attendais pas à aimer autant ce rouge à lèvres.')`
     //   )
     // );
 
-    // Generating USERS columns
     queries.push(
       database.query(
         `INSERT INTO users (firstname, lastname, pseudoname, mail, birthdate, logdate, password) VALUES
@@ -69,56 +27,61 @@ const seed = async () => {
       )
     );
 
-    // Generating PLAYLISTS columns
-    // queries.push(
-    //   database.query(
-    //     `INSERT INTO playlists (title, link, description) VALUES
-    //     ('Mer', 'Link', 'Les vidéos de Jamy sur la mer'),
-    //     ('Animaux', 'Link', 'Les vidéos de Jamy sur les animaux'),
-    //     ('Légendes', 'Link', 'Les vidéos de Jamy sur les légendes'),
-    //     ('Climat', 'Link', 'Les vidéos de Jamy sur le climat'),
-    //     ('Géographie', 'Link', 'Les vidéos de Jamy sur la géographie')`
-    //   )
-    // );
-
-    // Generating PLAYLISTS_VIDEOS columns
-    // queries.push(
-    //   database.query(
-    //     `INSERT INTO playlists_videos (playlists_id, videos_id) VALUES
-    //     (1, 1),
-    //     (1, 2),
-    //     (1, 3),
-    //     (1, 4),
-    //     (1, 5),
-    //     (2, 6),
-    //     (2, 7),
-    //     (2, 8),
-    //     (2, 9),
-    //     (2, 10),
-    //     (3, 11),
-    //     (3, 12),
-    //     (3, 13),
-    //     (3, 14),
-    //     (3, 15),
-    //     (4, 16),
-    //     (4, 17),
-    //     (4, 18),
-    //     (4, 19),
-    //     (4, 20),
-    //     (5, 21),
-    //     (5, 22),
-    //     (5, 23),
-    //     (5, 24),
-    //     (5, 25)`
-    //   )
-    // );
-
-    /* ************************************************************************* */
-
-    // Wait for all the insertion queries to complete
     await Promise.all(queries);
 
-    // Close the database connection
+    queries.push(
+      database.query(
+        `INSERT INTO shopping_cart (user_id) VALUES
+      (1),
+      (2)`
+      )
+    );
+
+    queries.push(
+      database.query(
+        `INSERT INTO mascara (name, codeColor, nameColor, quantity, effect, price, image_link) VALUES
+      ('Brow artist mascara perfecteur sourcils etoffés', '#F3F3F3', 'Transparent', 10, 'Volumateur', 19.95, 'https://i.postimg.cc/HLXnX50y/Capture-decran-2024-01-17-165131.webp'),
+      ('Age perfect mascara densifiant', '#391E17', 'Marron', 9, 'Densifieur', 12.90, 'https://i.postimg.cc/dt7YhCKm/image.webp'),
+      ('Telescopic', '#231F20', 'Noir', 12, 'Allongement', 14.50, 'https://i.postimg.cc/FF6jyM25/image.webp'),
+      ('Mascara panorama volume millions de cils', '#53352D', 'Marron', 10, 'Volumateur', 12.90, 'https://i.postimg.cc/Y9HmDktj/image.webp'),
+      ('Magic retouch précision', '#553B2F', 'Chatain', 10, 'Bouclage', 12.90, 'https://i.postimg.cc/9fdFg78H/image.webp'),
+      ('Mascara bambi eye faux cils noir intense', '#000000', 'Noir', 10, 'Allongement', 14.50, 'https://i.postimg.cc/yxr0zT5G/Capture-d-cran-2024-01-17-230530.png'),
+      ('Mascara Lash Paradise Waterproof', '#000000', 'Noir', 15, 'Volumateur', 11.50, 'https://i.postimg.cc/903Y4b1q/Capture-d-cran-2024-01-17-231033.png'),
+      ('Mascara Lash Paradise Noir Intense', '#000000', 'Noir', 13, 'Densifieur', 14, 'https://i.postimg.cc/7hvjxg2K/Capture-d-cran-2024-01-17-231305.png'),
+      ('Mascara Bambi Eye Faux Cils Waterproof', '#000000', 'Noir', 15, 'Bouclage', 17, 'https://i.postimg.cc/wvwLLsLg/Capture-d-cran-2024-01-17-231649.png'),
+      ('Volume Millions de Cils Mascara volume intense et soin', '#000000', 'Noir', 10, 'Allongemnt', 15, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png')`
+      )
+    );
+
+    queries.push(
+      database.query(
+        `INSERT INTO foundation (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
+      ('Fond de teint accord parfait', '#BE815B', 'Soleil rose', 20, 'Mate', 14, 'https://i.postimg.cc/YqRf4dQT/Capture-decran-2024-01-17-164403.webp'),
+      ('Poudre accord parfait', '#825439', 'Doré foncé', 18, 'Satin', 12.50, 'https://i.postimg.cc/wjcXK0jw/Capture-decran-2024-01-17-164524.webp'),
+      ('Fond de teint infaillible 32 matte cover', '#DAA682', 'Miel éclat', 15, 'Mate', 14.90, 'https://i.postimg.cc/zfd01kkY/Capture-decran-2024-01-17-164639.webp'),
+      ('Sérum teinté accord parfait', '#CF9B78', 'Lumiére', 20, 'Brillant', 17, 'https://i.postimg.cc/rmHTzxMv/Capture-decran-2024-01-17-164737.webp'),
+      ('Fond de teint en poudre infaillible 24h', '#795746', 'Ebéne', 18, 'Satin', 13, 'https://i.postimg.cc/zDjhVfg0/Capture-decran-2024-01-17-164856.webp')`
+      )
+    );
+
+    queries.push(
+      database.query(
+        `INSERT INTO lipstick (name, codeColor, nameColor, quantity, aspect, price, image_link) VALUES
+      ('Color riche rouge à lèvres', '#AF6B6E', 'Le nude admirable', 30, 'Matte', 16.99, 'https://i.postimg.cc/MHd9W2R5/image.webp'),
+      ('Rouge à lévres longue tenue infaillible 24h duo', '#BB604E', 'Corail constant', 25, 'Satin', 15, 'https://i.postimg.cc/NGNNPnq4/image.webp'),
+      ('Color riche rouge à lèvres', '#B6191F', 'Rouge passion', 25, 'Brillant', 18.50, 'https://i.postimg.cc/sf5L1x5B/image.webp'),
+      ('Baume à lèvres teinté glow paradise', '#CC8074', 'Beige eden', 30, 'Satin', 17.25, 'https://i.postimg.cc/vBdg30Tt/image.webp'),
+      ('Color riche rouge à lévres', '#B6191F', 'Rouge passion', 30, 'Mate', 18.50, 'https://i.postimg.cc/fRyW4ybP/image.webp'),
+      ('L’Oréal Paris infaillible matte resistance', '#B52030', 'La vraie romance', 25, 'Mate', 15.50, 'https://i.postimg.cc/Nj6PHBGb/Capture-d-cran-2024-01-17-232125.png'),
+      ('Color riche rouge à Lèvres ultra mat free the nudes', '#CC8070', 'Pas de cliché', 20, 'Mate', 17, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
+      ('Age perfect le rouge lumière', '#BC4022', 'Brique perlée', 20, 'Brillant', 14.90, 'https://i.postimg.cc/y8NhjK77/Capture-d-cran-2024-01-17-233113.png'),
+      ('Color riche rouge à lèvres mat', '#C74D5C', 'Frappez une rose', 25, 'Mate', 16.99, 'https://i.postimg.cc/Qx4gv8gY/Capture-d-cran-2024-01-17-234315.png'),
+      ('Rouge Signature Encre à Lèvres Liquide Mate', '#E88A70', 'Renforcer L&#39;autonomie', 20, 'Brillant', 17, 'https://i.postimg.cc/hPLwW7Z4/Capture-d-cran-2024-01-17-235122.pngs')`
+      )
+    );
+
+    await Promise.all(queries);
+
     database.end();
 
     console.info(`${database.databaseName} filled from ${__filename} 🌱`);
@@ -127,5 +90,4 @@ const seed = async () => {
   }
 };
 
-// Run the seed function
 seed();

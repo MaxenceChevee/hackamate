@@ -1,13 +1,14 @@
 @import "../styles/variables.scss";
 
 nav {
-  background-color: $color4;
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between !important;
   align-items: center;
   height: 10vh;
   width: 100%;
   margin-right: 0;
+  border-bottom: 1px solid black;
 
   .left-section {
     display: flex;
@@ -15,19 +16,42 @@ nav {
   }
 
   .logo-container {
-    width: 5rem;
+    width: 8rem;
   }
 
   .logo {
+    margin-left: 0.8rem;
     max-width: 100%;
     max-height: 100%;
     width: 100%;
     height: auto;
+    border: none;
+  }
+  .cart-icon-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cart-icon {
+    display: block;
+    width: 2.5rem;
+  }
+
+  .cart-counter {
+    position: absolute;
+    top: 50%;
+    right: 42%;
+    transform: translate(50%, -50%);
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 4px;
+    font-size: 10px;
   }
 
   .title {
     text-align: center;
-    color: white;
+    color: rgb(194, 41, 41);
     flex-grow: 1;
   }
 
@@ -40,10 +64,10 @@ nav {
   .cross-menu {
     display: block;
     cursor: pointer;
-    font-size: 5vw;
+    font-size: 1.6rem;
     border: none;
     background: none;
-    color: white;
+    color: black;
     transition: transform 0.3s ease;
   }
 
@@ -55,9 +79,15 @@ nav {
     top: 10vh;
     right: 0;
     width: 6rem !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: opacity 0.3s ease;
+    hr {
+      width: 100px;
+      color: black;
+      &:last-child {
+        display: none;
+      }
+    }
   }
 
   li {
@@ -67,19 +97,24 @@ nav {
     a,
     button {
       text-decoration: none;
-      color: white;
+      color: black;
       font-weight: bold;
       font-size: 1.2rem;
-
       &:hover {
         color: $color4;
       }
     }
+    a {
+      font-weight: normal;
+      transition: 1s ease;
+      font-size: 1rem;
+      &:hover {
+        color: $color4;
+        font-weight: bold;
+      }
+    }
 
     .logout-button {
-      padding: 12px;
-      background-color: $color4;
-      color: white;
       cursor: pointer;
       font-size: 18px;
       border: none;
@@ -96,7 +131,7 @@ nav {
   ul.show-menu {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
@@ -104,9 +139,7 @@ nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    border-radius: 0.5rem;
-    background-color: $color4;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: white;
     z-index: 1;
     opacity: 1;
     height: 60%;
@@ -148,7 +181,6 @@ nav {
       top: 10vh;
       right: 0;
       width: 6rem !important;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -164,5 +196,36 @@ nav {
     .burger-menu.open + ul.show-menu {
       opacity: 1;
     }
+  }
+  .bottom {
+    position: absolute;
+    border-radius: 100%;
+    right: 0;
+    top: 66px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      rgb(194, 41, 41),
+      rgba(194, 41, 41, 0.5),
+      transparent 80%
+    );
+    animation: navBottom 5s ease-in-out infinite;
+  }
+}
+@keyframes navBottom {
+  0%,
+  50% {
+    opacity: 1;
+    width: 0;
+  }
+
+  75% {
+    opacity: 1;
+    width: 200%;
+  }
+
+  76%,
+  100% {
+    opacity: 1;
   }
 }

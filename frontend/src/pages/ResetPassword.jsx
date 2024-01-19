@@ -73,12 +73,12 @@ function ResetPassword() {
     <div className="page-container">
       <NavBar />
       <div className="auth-form">
-        <h2>Reset Password</h2>
+        <h2>réinitialiser le mot de passe</h2>
         {error && <p className="error-message">{error}</p>}
         {success && <p>{success}</p>}
         <form onSubmit={handleResetPassword} className="form-container">
           <label>
-            New Password:
+            Nouveau mot de passe:
             <input
               type="password"
               name="password"
@@ -87,7 +87,7 @@ function ResetPassword() {
             />
           </label>
           <label>
-            Confirm New Password:
+            Confirmer le nouveau mot de passe:
             <input
               type="password"
               name="confirmPassword"
@@ -95,7 +95,7 @@ function ResetPassword() {
               onChange={handleInputChange}
             />
           </label>
-          <button type="submit">Reset Password</button>
+          <button type="submit">Réinitialiser le mot de passe</button>
         </form>
         {showPopup && (
           <Popup onClose={handleClosePopup}>

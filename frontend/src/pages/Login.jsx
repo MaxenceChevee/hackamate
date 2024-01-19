@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import { useAuth } from "../context/AuthContext";
 import Popup from "../components/Popup";
 import "../styles/Login.scss";
+import Footer from "../components/Footer";
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -57,7 +58,7 @@ export default function Login() {
     <>
       <NavBar />
       <div className="auth-form">
-        <h2>Login</h2>
+        <h2>Se connecter</h2>
         <form onSubmit={handleLogin} className="form-container">
           <label>
             Mail:
@@ -69,7 +70,7 @@ export default function Login() {
             />
           </label>
           <label>
-            Password:
+            Mot de passe:
             <input
               type="password"
               name="password"
@@ -80,18 +81,19 @@ export default function Login() {
           <button type="submit">Login</button>
         </form>
         <p>
-          Don't have an account? <Link to="/register">Signup here</Link>
+          Je n'ai pas de compte? <Link to="/register">Inscrivez-vous ici</Link>
         </p>
         <p>
-          <Link to="/forgot-password">Forgot your password?</Link>
+          <Link to="/forgot-password">Mot de passe oublié?</Link>
         </p>
         {loginError && <p className="error-message">{loginError}</p>}
         {showLoginPopup && (
           <Popup onClose={handleCloseLoginPopup} confirmButtonText="Close">
-            <p>Login successful! Welcome back ✔</p>
+            <p>Connexion réussie! Content de te revoir ✔</p>
           </Popup>
         )}
       </div>
+      <Footer />
     </>
   );
 }

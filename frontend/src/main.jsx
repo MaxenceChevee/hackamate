@@ -7,20 +7,21 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import { ProductProvider } from "./context/ProductsContext";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+// import { CommentProvider } from "./context/CommentContext";
 import App from "./App";
-// import Dashboard from "./pages/admin/Dashboard";
-// import Content from "./pages/admin/Content";
-// import Category from "./pages/admin/Category";
-// import Users from "./pages/admin/Users";
-// import Videos from "./pages/Videos";
-// import Playlists from "./pages/Playlists";
 import LogIn from "./pages/Login";
 import Register from "./pages/Signup";
 import Settings from "./pages/Settings";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Popup from "./components/Popup";
+import ShoppingCart from "./pages/ShoppingCart";
+import Uploads from "./pages/Uploads";
+import Scan from "./pages/scan";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
 
 function PrivateRoute({ element, requiresAuth, ...props }) {
   const { user } = useAuth();
@@ -56,27 +57,11 @@ function Main() {
   return (
     <>
       <Routes>
-        {/* <Route
-          path="/admin/*"
-          element={<PrivateRoute element={<Dashboard />} requiresAuth />}
-        />
-        <Route
-          path="/content/*"
-          element={<PrivateRoute element={<Content />} requiresAuth />}
-        />
-        <Route
-          path="/category/*"
-          element={<PrivateRoute element={<Category />} requiresAuth />}
-        />
-        <Route
-          path="/users/*"
-          element={<PrivateRoute element={<Users />} requiresAuth />}
-        />
-        <Route path="/videos" element={<Videos />} />
-        <Route
-          path="/playlists"
-          element={<PrivateRoute element={<Playlists />} requiresAuth />}
-        /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/shopping-cart" element={<ShoppingCart />} />
+        <Route path="/analyzer/uploads" element={<Uploads />} />
+        <Route path="/analyzer/scan" element={<Scan />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={user ? <Navigate to="/" /> : <LogIn />} />
         <Route
           path="/register"
@@ -114,7 +99,11 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
-        <Main />
+        <ProductProvider>
+          {/* <CommentProvider> */}
+          <Main />
+          {/* </CommentProvider> */}
+        </ProductProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>

@@ -10,6 +10,7 @@
   h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: black;
   }
 
   .form-container {
@@ -21,6 +22,7 @@
       font-size: 16px;
       display: flex;
       flex-direction: column;
+      color: black;
 
       input {
         padding: 10px;
@@ -31,7 +33,7 @@
     button {
       padding: 12px;
       background-color: $color4;
-      color: white;
+      color: black;
       cursor: pointer;
       font-size: 18px;
       border: none;
@@ -51,5 +53,8 @@
       border-radius: 4px;
       color: red;
     }
+  }
+  p {
+    color: black;
   }
 }
