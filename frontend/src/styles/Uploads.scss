@@ -21,6 +21,7 @@
     margin: 1rem;
   }
   .valide_uploads {
+    cursor: pointer;
     color: white;
     background-color: black;
     border: 2px solid transparent;
@@ -66,6 +67,7 @@
       cursor: pointer;
     }
     .valide_popup_uploads {
+      cursor: pointer;
       appearance: none;
       background-color: rgb(194, 41, 41);
       color: white;
@@ -130,6 +132,7 @@ img {
     color: black;
   }
   .valide_result {
+    cursor: pointer;
     margin-left: 1rem;
     color: white;
     background-color: black;
