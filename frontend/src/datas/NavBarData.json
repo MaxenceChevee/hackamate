@@ -34,4 +34,9 @@
     "linkname": "Panier",
     "linkurl": "/shopping-cart"
   }
+  {
+    "id": 6,
+    "linkname": "Contact",
+    "linkurl": "/contact"
+  }
 ]

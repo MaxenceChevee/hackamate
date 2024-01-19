@@ -23,8 +23,13 @@
   },
   {
     "id": 5,
+<<<<<<< HEAD
     "linkname": "Scan",
     "linkurl": "/analyzer/scan"
+=======
+    "linkname": "Contact",
+    "linkurl": "/contact"
+>>>>>>> afdc5b42906fac50d69efc6a43a72c62cfcdb452
   },
   {
     "id": 6,

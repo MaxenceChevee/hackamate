@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 // import { CommentProvider, useCommentContext } from "../context/CommentContext";
 // import Comment from "../components/Comment";
@@ -17,6 +17,7 @@ function Uploads() {
   const { setProducts, products } = useContext(productContext);
   const [isValidateImg, setIsValidateImg] = useState(false);
   // const [showComments, setShowComments] = useState(false);
+  const [isShoppingCart, setIsShoppingCart] = useState(false);
 
   const handleAnalyzer = () => {
     setIsLoading(true);
@@ -46,6 +47,7 @@ function Uploads() {
       codeColor: selectProduct.codeColor,
     };
     setProducts([...products, arrayProduct]);
+    setIsShoppingCart(true);
   };
 
   const handleCounter = () => {
@@ -55,6 +57,13 @@ function Uploads() {
   const handleValidateImg = () => {
     setIsValidateImg(!isValidateImg);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShoppingCart(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [isShoppingCart]);
 
   return (
     // <CommentProvider>
@@ -66,15 +75,23 @@ function Uploads() {
           {isValidateImg && (
             <section className="popup_uploads">
               <h3>Decrivez votre peau</h3>
-              <div>
-                <input type="checkbox" />
-                <p>Avez-vous des allergies ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous des cicatrices ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau sèche ?</p>
-                <input type="checkbox" />
-                <p>Avez-vous la peau grasse ?</p>
+              <div className="check_uploads">
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des allergies ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous des cicatrices ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau sèche ?</p>
+                </div>
+                <div className="align_check">
+                  <input type="checkbox" />
+                  <p>Avez-vous la peau grasse ?</p>
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -82,6 +99,7 @@ function Uploads() {
                   handleValidateImg();
                 }}
                 type="button"
+                className="valide_popup_uploads"
               >
                 Valider
               </button>
@@ -93,14 +111,16 @@ function Uploads() {
             className="select_uploads"
             onChange={handleChange}
           />
-          <button
-            type="button"
-            className="valide_uploads"
-            onClick={() => handleValidateImg()}
-            disabled={!image}
-          >
-            Valider
-          </button>
+          {!isValidateImg && (
+            <button
+              type="button"
+              className="valide_uploads"
+              onClick={() => handleValidateImg()}
+              disabled={!image}
+            >
+              Valider
+            </button>
+          )}
         </section>
       )}
 
@@ -114,11 +134,18 @@ function Uploads() {
 
       {analyzeResult && !isLoading && (
         <section className="page_uploads_result">
+          {isShoppingCart && (
+            <img
+              className="pouce_uploads"
+              src="https://usagif.com/wp-content/uploads/thumbs-up-99.gif"
+              alt="pouce"
+            />
+          )}
           <p>produit dans le panier {counter}</p>
           {analyzeResult.map((result) => {
             return (
               <>
-                <div className="container_result" key={result.id}>
+                <div className="container_result" key={result.name}>
                   <p className="desc_result">{result.name}</p>
                   <img
                     className="img_result"

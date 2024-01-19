@@ -42,7 +42,8 @@ function NavBar() {
     { id: 3, linkname: "Paramètres", linkurl: "/settings" },
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
     { id: 5, linkname: "Scan", linkurl: "/analyzer/scan" },
-    { id: 6, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
+    { id: 6, linkname: "Contact", linkurl: "/contact" },
+    { id: 7, linkname: "Se déconnecter", linkurl: "/", action: handleLogout },
   ];
 
   const loggedOutLinks = [
@@ -52,6 +53,7 @@ function NavBar() {
     { id: 4, linkname: "Importer", linkurl: "/analyzer/uploads" },
     { id: 5, linkname: "Scan", linkurl: "/analyzer/scan" },
     { id: 6, linkname: "Panier", linkurl: "/shopping-cart" },
+    { id: 7, linkname: "Contact", linkurl: "/contact" },
   ];
 
   const navbardata = user ? loggedInLinks : loggedOutLinks;
