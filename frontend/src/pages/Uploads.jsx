@@ -72,6 +72,7 @@ function Uploads() {
       {!analyzeResult && !isLoading && (
         <section className="page_uploads">
           <h1 className="title_uploads">Import</h1>
+          <p>Téléchargez ici la photo d'un modèle que vous appréciez.</p>
           {isValidateImg && (
             <section className="popup_uploads">
               <h3>Decrivez votre peau</h3>
@@ -134,6 +135,10 @@ function Uploads() {
 
       {analyzeResult && !isLoading && (
         <section className="page_uploads_result">
+          <h2>
+            Voici les produits que nous vous proposons, ceux qui se rapprochent
+            le plus de la photo que vous avez téléchargée.
+          </h2>
           {isShoppingCart && (
             <img
               className="pouce_uploads"
@@ -141,7 +146,7 @@ function Uploads() {
               alt="pouce"
             />
           )}
-          <p>produit dans le panier {counter}</p>
+
           {analyzeResult.map((result) => {
             return (
               <>

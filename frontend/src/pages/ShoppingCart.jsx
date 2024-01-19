@@ -43,7 +43,7 @@ function ShoppingCart() {
     <>
       <NavBar />
       <div className="container_shop">
-        <h1 className="title_shop">Shopping Cart</h1>
+        <h1 className="title_shop">Votre panier</h1>
 
         <ul>
           {cartItems.map((item) => (
@@ -73,11 +73,11 @@ function ShoppingCart() {
           ))}
         </ul>
 
-        <h2>Votre panier:</h2>
+        <h2>Gérez vos achats ici</h2>
         <ul>
           {products.map((product) => (
             <li key={product.id}>
-              {product.name} - {product.id}
+              {product.name} - {product.quantity}ml
               {product.image && (
                 <img src={product.image} alt={product.name} />
               )}{" "}
